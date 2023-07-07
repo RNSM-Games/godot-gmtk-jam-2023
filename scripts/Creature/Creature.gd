@@ -11,11 +11,11 @@ var speed : float
 
 
 func equip():
-    pass
+	pass
 
 func attack():
-    pass
+	pass
 
 func use_ability():
-    pass
+	pass
 
