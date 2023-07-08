@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Enemy/EnemyController.gd" id="1_oyvmp"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_jbdul"]
-[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/skelly.png" id="3_gmivg"]
+[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/Creatures/skelly.png" id="3_gmivg"]
 [ext_resource type="PackedScene" uid="uid://bxesepst32xuk" path="res://scenes/Abilities/Charge.tscn" id="4_5vts4"]
 [ext_resource type="PackedScene" path="res://scenes/melee_weapon.tscn" id="6_oedsm"]
 [ext_resource type="PackedScene" uid="uid://cpdkwg7vsst2" path="res://scenes/Abilities/EnemyStateSystem.tscn" id="7_uqh8o"]

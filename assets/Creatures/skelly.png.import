@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://umpmllmshnjx"
-<<<<<<<< HEAD:assets/creature/skelly.png.import
-path="res://.godot/imported/skelly.png-2d428e10a924bd1810996ff46a068f2f.ctex"
-========
+uid="uid://drr06ohki6mpk"
 path="res://.godot/imported/skelly.png-e445ba4292b7f3f79f1e3ea347505389.ctex"
->>>>>>>> combat-working:assets/Creatures/skelly.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/creature/skelly.png.import
-source_file="res://assets/creature/skelly.png"
-dest_files=["res://.godot/imported/skelly.png-2d428e10a924bd1810996ff46a068f2f.ctex"]
-========
 source_file="res://assets/Creatures/skelly.png"
 dest_files=["res://.godot/imported/skelly.png-e445ba4292b7f3f79f1e3ea347505389.ctex"]
->>>>>>>> combat-working:assets/Creatures/skelly.png.import
 
 [params]
 

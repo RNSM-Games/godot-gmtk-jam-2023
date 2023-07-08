@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/projectiles/arrow.png.import
-uid="uid://dnoxkjejpr0rp"
+uid="uid://dpsi6t40bunx2"
 path="res://.godot/imported/arrow.png-8241e3c1aea5aec04ebebadbcff912e7.ctex"
-========
-uid="uid://bjgvlygim4fph"
-path="res://.godot/imported/Quetz_transparent.png-3217f1fb8b27a95da10ae0e2531f8f50.ctex"
->>>>>>>> combat-working:assets/Creatures/Quetz_transparent.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/projectiles/arrow.png.import
 source_file="res://assets/projectiles/arrow.png"
 dest_files=["res://.godot/imported/arrow.png-8241e3c1aea5aec04ebebadbcff912e7.ctex"]
-========
-source_file="res://assets/Creatures/Quetz_transparent.png"
-dest_files=["res://.godot/imported/Quetz_transparent.png-3217f1fb8b27a95da10ae0e2531f8f50.ctex"]
->>>>>>>> combat-working:assets/Creatures/Quetz_transparent.png.import
 
 [params]
 
