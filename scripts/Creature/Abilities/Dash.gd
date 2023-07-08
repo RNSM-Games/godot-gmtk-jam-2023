@@ -16,13 +16,13 @@ func _physics_process(delta):
 
 	if (!is_dashing && !can_dash && time_to_dash == cooldown):
 		is_dashing = true
-		hitbox.disabled = true
+		# hitbox.disabled = true
 		character.can_move = false
 	elif(is_dashing):
 		character.position = lerp(character.position,dash_pos, .4)
 	if(character.position.round() == dash_pos.round()):
 		is_dashing = false
-		hitbox.disabled = false
+		# hitbox.disabled = false
 		character.can_move = true
 	if(time_to_dash <= 0 ):
 		time_to_dash = cooldown
