@@ -16,7 +16,7 @@ func _ready():
 	sprite = get_node("CharacterBody2D/Sprite2D")
 	sprite.texture = load(image)
 	self.ability = get_node("Ability")
-	self.weapon = get_node("CharacterBody2D/MeleeWeapon")
+	self.weapon = get_node("MeleeWeapon")
 
 
 func _input(event):

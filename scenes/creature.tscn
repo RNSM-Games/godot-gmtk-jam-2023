@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8ycxlb0oc011"]
+[gd_scene load_steps=6 format=3 uid="uid://c8ycxlb0oc011"]
 
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
 [ext_resource type="PackedScene" uid="uid://d32pe4yclug6" path="res://melee_weapon.tscn" id="3_8stic"]
+[ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="4_vvpua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
 
@@ -16,11 +17,14 @@ script = ExtResource("1_ihk3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D"]
+[node name="Hitbox" type="CollisionShape2D" parent="Node2D/CharacterBody2D"]
 position = Vector2(5.89993, -6.30002)
 shape = SubResource("CapsuleShape2D_6nqvy")
 
-[node name="MeleeWeapon" parent="Node2D/CharacterBody2D" instance=ExtResource("3_8stic")]
+[node name="Ability" type="Node" parent="Node2D"]
+script = ExtResource("4_vvpua")
+
+[node name="MeleeWeapon" parent="Node2D" instance=ExtResource("3_8stic")]
 position = Vector2(198, -144)
 rotation = -1.5708
 
