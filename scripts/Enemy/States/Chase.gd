@@ -23,6 +23,8 @@ func process_physics(_delta : float):
 	
 	var dir = target.global_position - enemy_controller.global_position
 	enemy_controller.move_direction = dir.normalized()
+	
+	enemy_controller.target = target
 
 	if dir.length() < attack_radius:
 		if enemy.health <= 50:
