@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://umpmllmshnjx"
-path="res://.godot/imported/skelly.png-06de2b7a386c655b558671b02c86d21c.ctex"
+uid="uid://knhwy3xkiw8w"
+path="res://.godot/imported/stormbreaker.png-75149414fa35fbfc7f05e1a93d93e62b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/skelly.png"
-dest_files=["res://.godot/imported/skelly.png-06de2b7a386c655b558671b02c86d21c.ctex"]
+source_file="res://assets/Weapons/stormbreaker.png"
+dest_files=["res://.godot/imported/stormbreaker.png-75149414fa35fbfc7f05e1a93d93e62b.ctex"]
 
 [params]
 

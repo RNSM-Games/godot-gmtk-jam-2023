@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://knhwy3xkiw8w"
-path="res://.godot/imported/stormbreaker.png-0440781a16fca980ec54522b156afa08.ctex"
+uid="uid://bjgvlygim4fph"
+path="res://.godot/imported/Quetz_transparent.png-3217f1fb8b27a95da10ae0e2531f8f50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stormbreaker.png"
-dest_files=["res://.godot/imported/stormbreaker.png-0440781a16fca980ec54522b156afa08.ctex"]
+source_file="res://assets/Creatures/Quetz_transparent.png"
+dest_files=["res://.godot/imported/Quetz_transparent.png-3217f1fb8b27a95da10ae0e2531f8f50.ctex"]
 
 [params]
 
