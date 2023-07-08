@@ -34,6 +34,7 @@ hitbox = NodePath("../../Collider/Hitbox")
 
 [node name="MeleeWeapon" parent="Weapon" node_paths=PackedStringArray("hitbox") instance=ExtResource("4_unfta")]
 position = Vector2(0, 1)
+damage_modifier = 10.0
 hitbox = NodePath("../../Collider/Hitbox")
 
 [node name="Collider" type="RigidBody2D" parent="."]

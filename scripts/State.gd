@@ -1,6 +1,8 @@
 extends Node
 class_name State
 
+#TODO -> Make the states not crash on enemy deletion (check attack between player and enemy. CURRENTLY AT CHASE LINE 24)
+
 @export var enemy_controller : CharacterBody2D
 @export var enemy : Node2D
 
