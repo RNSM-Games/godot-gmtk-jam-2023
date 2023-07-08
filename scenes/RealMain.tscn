@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8eivdsbl17hq"]
+
+[ext_resource type="Texture2D" uid="uid://c6sgqjy5u7pnb" path="res://assets/Environment/Background.png" id="1_8llla"]
+[ext_resource type="PackedScene" uid="uid://b2e5g18r0od8" path="res://scenes/Creatures/skelly.tscn" id="2_3k4dm"]
+
+[node name="RealMain" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8llla")
+
+[node name="Orc" parent="." instance=ExtResource("2_3k4dm")]
