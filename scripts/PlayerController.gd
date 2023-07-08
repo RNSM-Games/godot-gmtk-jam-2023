@@ -7,13 +7,13 @@ func get_input():
 	direction = Input.get_vector("left", "right", "up", "down")
 	move_direction = direction
 	if velocity.x != 0:
-		$Body/Sprite2D.flip_h = velocity.x < 0
+		get_child(0).get_node("Sprite2D").flip_h = velocity.x < 0
 
 
 func _physics_process(_delta):
 	get_input()
 	if(can_move):
-		move(get_node('Body').speed,move_direction)
+		move(get_child(0).speed,move_direction)
 		move_and_slide()
 
 

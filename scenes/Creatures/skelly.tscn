@@ -15,9 +15,10 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ef1h7")
 body = NodePath("Skeleton")
 
-[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "sprite")]
+[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_55v0m")
 weapon = NodePath("../Weapon/MeleeWeapon")
+ability = NodePath("../Ability/DropBomb")
 health = 10
 damage = 10.0
 speed = 600.0
@@ -42,3 +43,7 @@ character = NodePath("../../Skeleton")
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_3x2rt")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(397.5, -310)
+scale = Vector2(24837.5, 53.0041)
