@@ -8,12 +8,7 @@ var can_move : bool = true
 
 
 func move(speed: float, direction: Vector2):
-    velocity = speed * direction
-    move_and_slide()
-
-
-func get_target() -> Vector2:
-    return Vector2.ZERO
-    pass
+	velocity = speed * direction
+	move_and_slide()
 
 
