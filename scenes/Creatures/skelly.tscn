@@ -10,21 +10,20 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
 
-[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
+[node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ef1h7")
-body = NodePath("Body")
+body = NodePath("Skeleton")
 
-[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
+[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "sprite")]
 script = ExtResource("2_55v0m")
 weapon = NodePath("../Weapon/MeleeWeapon")
-ability = NodePath("")
 health = 10
 damage = 10.0
 speed = 600.0
 sprite = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="Body"]
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton"]
 texture = ExtResource("3_pkll7")
 
 [node name="Ability" type="Node2D" parent="."]
@@ -38,7 +37,7 @@ bomb = ExtResource("5_pirqx")
 [node name="MeleeWeapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("6_xm8hi")]
 position = Vector2(0, -237.5)
 scale = Vector2(2.12, 2.12)
-character = NodePath("../../Body")
+character = NodePath("../../Skeleton")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 1)
