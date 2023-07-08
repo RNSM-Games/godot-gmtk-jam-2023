@@ -9,8 +9,8 @@ var hitbox : CollisionShape2D
 
 
 func _ready():
-	assert(get_parent().get_parent().get_node("Collider/Hitbox"), "could not find hitbox")
-	hitbox = get_parent().get_parent().get_node("Collider/Hitbox")
+	assert(get_parent().get_parent().get_node("Hitbox"), "could not find hitbox")
+	hitbox = get_parent().get_parent().get_node("Hitbox")
 	assert(get_parent().get_parent(), "could not find body")
 	character = get_parent().get_parent()
 	character_bod = get_parent().get_parent().get_node("Body")
