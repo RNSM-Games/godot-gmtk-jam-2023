@@ -14,12 +14,12 @@ func action(damage:float):
 func spawn_projectile():
 	var projectile = projectile_scene.instantiate()
 	owner.get_parent().add_child(projectile)
-	print("parent:",character.get_parent())
-	var weapon = character.get_parent().get_node("Weapon").get_child(0)
+	print("parent:",character)
+	var weapon = character.get_node("Weapon").get_child(0)
 	print("weapon:",weapon)
 	var node_2d = weapon.get_node("Node2D")
 	var proj_spawn = weapon.get_node("Node2D/ProjectileSpawnPoint")
 	print("loc:",proj_spawn.position)
-	projectile.update_rotation(node_2d.rotation, character.get_parent().position+proj_spawn.position)
+	projectile.update_rotation(node_2d.rotation, character.position+proj_spawn.position)
 
 
