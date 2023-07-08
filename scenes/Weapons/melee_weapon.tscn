@@ -1,12 +1,7 @@
-
-[gd_scene load_steps=10 format=3 uid="uid://8t67gxnsuimx"]
-
-
+[gd_scene load_steps=8 format=3 uid="uid://8t67gxnsuimx"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_iv5hx"]
-[ext_resource type="Texture2D" path="res://assets/weapon/bow_shot.png" id="2_fm63p"]
-[ext_resource type="Texture2D" path="res://assets/weapon/stormbreaker.png" id="2_sg5vt"]
-[ext_resource type="Texture2D" path="res://assets/weapon/bow.png" id="3_flx7q"]
+[ext_resource type="Texture2D" uid="uid://knhwy3xkiw8w" path="res://assets/Weapons/stormbreaker.png" id="2_ng458"]
 
 [sub_resource type="Animation" id="Animation_trbp3"]
 length = 0.5
@@ -38,7 +33,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("2_fm63p"), ExtResource("3_flx7q")]
+"values": [null, null]
 }
 
 [sub_resource type="Animation" id="Animation_34r76"]
@@ -93,13 +88,11 @@ libraries = {
 position = Vector2(-94.9999, -31.0002)
 rotation = -1.5708
 scale = Vector2(0.368758, 0.368758)
-texture = ExtResource("2_sg5vt")
+texture = ExtResource("2_ng458")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
-visible = false
 position = Vector2(3.00006, -245)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xvm63")

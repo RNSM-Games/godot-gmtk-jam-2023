@@ -11,12 +11,14 @@ func _init():
 	print("yo im spawn")
 	
 
-func update_rotation(_rotation, _position):
+# had to use position instead of _position to actually get the spawnpoint location of ranged weapon
+# _rotation is not being used
+func update_rotation(rotation, _position):
 	print("updating")
 #	$Sprite2D.rotation = rotation
-	self.position = position
-	self.rotation = rotation + PI/2
-	self.start_pos = position
+	self.position = _position
+	self.rotation = rotation + PI / 2
+	self.start_pos = _position
 
 func _physics_process(delta):
 	print("gaming")
