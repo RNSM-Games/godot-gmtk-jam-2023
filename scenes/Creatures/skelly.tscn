@@ -1,12 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://7akb8ba62jlv"]
+[gd_scene load_steps=12 format=3 uid="uid://7akb8ba62jlv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ef1h7"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_55v0m"]
-[ext_resource type="Texture2D" uid="uid://cug66enowkl4g" path="res://assets/Creatures/skelly-no-arms.png" id="3_pkll7"]
+[ext_resource type="Texture2D" uid="uid://bewutkjfihbxx" path="res://assets/Creatures/skelly_1.png" id="3_qoeul"]
+[ext_resource type="Texture2D" uid="uid://cgavrio7xpn6j" path="res://assets/Creatures/skelly_2.png" id="4_0f1bd"]
 [ext_resource type="PackedScene" uid="uid://cu81dail48j6j" path="res://scenes/Abilities/DropBomb.tscn" id="4_isn7h"]
 [ext_resource type="PackedScene" uid="uid://b4dhw7r8l21ep" path="res://scenes/bomb.tscn" id="5_pirqx"]
+[ext_resource type="Texture2D" uid="uid://b5pioy0ce8k64" path="res://assets/Creatures/skelly_3.png" id="5_wjrer"]
 [ext_resource type="Script" path="res://scenes/Creatures/RotateToTarget.gd" id="6_g2yio"]
 [ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_0tjrb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5vuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qoeul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0f1bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wjrer")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
@@ -24,10 +43,11 @@ ability = NodePath("../Ability/DropBomb")
 health = 10
 damage = 10.0
 speed = 600.0
-sprite = NodePath("Sprite2D")
+sprite = NodePath("")
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton"]
-texture = ExtResource("3_pkll7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton"]
+sprite_frames = SubResource("SpriteFrames_s5vuy")
+animation = &"walk"
 
 [node name="Ability" type="Node2D" parent="."]
 

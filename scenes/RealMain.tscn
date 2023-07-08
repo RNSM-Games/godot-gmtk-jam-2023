@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8eivdsbl17hq"]
+[gd_scene load_steps=4 format=3 uid="uid://b8eivdsbl17hq"]
 
+[ext_resource type="Script" path="res://scripts/RealMain.gd" id="1_3u71l"]
 [ext_resource type="Texture2D" uid="uid://c6sgqjy5u7pnb" path="res://assets/Environment/Background.png" id="1_8llla"]
-[ext_resource type="PackedScene" uid="uid://bgpgnif1lrxe5" path="res://scenes/Creatures/orc.tscn" id="2_o41ne"]
+[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/skelly.tscn" id="3_h17xp"]
 
 [node name="RealMain" type="Node"]
+script = ExtResource("1_3u71l")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_8llla")
 
-[node name="Creature" parent="." instance=ExtResource("2_o41ne")]
+[node name="Creature" parent="." instance=ExtResource("3_h17xp")]
