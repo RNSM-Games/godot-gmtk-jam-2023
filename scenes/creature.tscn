@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
-[ext_resource type="PackedScene" uid="uid://b55qhb1nsj2ia" path="res://melee_weapon.tscn" id="3_8stic"]
+[ext_resource type="PackedScene" uid="uid://b55qhb1nsj2ia" path="res://scenes/Weapons/melee_weapon.tscn" id="3_8stic"]
 [ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="4_vvpua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
 
-[node name="creature" type="Node"]
+[node name="creature2" type="Node"]
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("1_gfria")
