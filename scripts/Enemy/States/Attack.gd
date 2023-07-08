@@ -40,6 +40,7 @@ func process_physics(_delta : float):
 			if enemy.ability.damage_modifier <= 0:
 				var r = rng.randi_range(1, 100)
 				if r == 1:
+					enemy_controller.move_direction = -enemy_controller.move_direction
 					transitioned.emit(self, "useability")
 					return
 			
