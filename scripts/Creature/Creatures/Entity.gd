@@ -2,10 +2,10 @@ extends Node2D
 
 class_name Entity
 
-var health : int
-var damage : float
-var speed : float
-var can_take_damage : bool = true
+@export var health : int
+@export var damage : float
+@export var speed : float
+@export var can_take_damage : bool = true
 @export var sprite : Sprite2D
 
 func get_hit(dmg:int) -> void:

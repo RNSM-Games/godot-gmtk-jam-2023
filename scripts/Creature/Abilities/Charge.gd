@@ -7,6 +7,7 @@ var is_charging: bool = false
 var charge_pos : Vector2 = Vector2.ZERO
 var charge_dist : float = 1000
 var time_to_charge : float
+
 func _init():
 	cooldown = 7
 	time_to_charge = cooldown

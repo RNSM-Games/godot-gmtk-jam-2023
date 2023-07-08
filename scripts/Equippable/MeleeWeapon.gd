@@ -7,7 +7,6 @@ func _init():
 	self.damage_modifier = 25.0
 
 func action(damage:float):
-	
 	self.attack_damage = damage * damage_modifier
 	
 	$AnimationPlayer.play("sword_swing")
