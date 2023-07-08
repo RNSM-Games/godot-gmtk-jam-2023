@@ -36,14 +36,13 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ef1h7")
 body = NodePath("Skeleton")
 
-[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
+[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
 script = ExtResource("2_55v0m")
 weapon = NodePath("../Weapon/ranged_weapon")
 ability = NodePath("../Ability/DropBomb")
 health = 10
 damage = 10.0
 speed = 600.0
-sprite = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton"]
 sprite_frames = SubResource("SpriteFrames_s5vuy")

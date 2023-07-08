@@ -5,12 +5,11 @@ extends Node2D
 @export var card_content : PackedScene
 var spawn_time : float = 3
 
+signal cardExploded
 
-
-func _process(delta):
-	if(spawn_time <= 0 ):
-		_spawn(true)
-	spawn_time -= delta
+func _ready():
+	$Sprite2D.texture = sprite
+	$AnimatedSprite2D.visible = false
 
 
 
@@ -31,3 +30,7 @@ func _spawn(isPlayer : bool):
 	if card_type.find("event") != -1:
 		print("event")
 		pass
+
+
+func _on_animated_sprite_2d_animation_finished():
+	cardExploded.emit()
