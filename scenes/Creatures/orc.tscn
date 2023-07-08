@@ -1,0 +1,72 @@
+[gd_scene load_steps=13 format=3 uid="uid://e7yx4q87o35s"]
+
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_c6isf"]
+[ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_85ptd"]
+[ext_resource type="Texture2D" uid="uid://cso14ow6fn7nr" path="res://assets/Creatures/orc_1.png" id="3_he3wj"]
+[ext_resource type="Texture2D" uid="uid://bxihvdwiewg5q" path="res://assets/Creatures/orc_2.png" id="4_wf4lq"]
+[ext_resource type="PackedScene" uid="uid://cu81dail48j6j" path="res://scenes/Abilities/DropBomb.tscn" id="4_xj56n"]
+[ext_resource type="Texture2D" uid="uid://cl3nj5xjfwyy0" path="res://assets/Creatures/orc_3.png" id="5_5oich"]
+[ext_resource type="PackedScene" uid="uid://b4dhw7r8l21ep" path="res://scenes/bomb.tscn" id="5_hnt3q"]
+[ext_resource type="Script" path="res://scenes/Creatures/RotateToTarget.gd" id="6_4rgh3"]
+[ext_resource type="Texture2D" uid="uid://crmgm4mhh5due" path="res://assets/Creatures/orc_4.png" id="6_wbhvt"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_msmcw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2f4up"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_he3wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wf4lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5oich")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wbhvt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
+radius = 164.59
+
+[node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
+position = Vector2(0, 2)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_c6isf")
+body = NodePath("Orc")
+
+[node name="Orc" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+script = ExtResource("2_85ptd")
+weapon = NodePath("../Weapon/ranged_weapon")
+ability = NodePath("../Ability/DropBomb")
+health = 10
+damage = 10.0
+speed = 600.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Orc"]
+sprite_frames = SubResource("SpriteFrames_2f4up")
+animation = &"walk"
+frame_progress = 0.878763
+
+[node name="Ability" type="Node2D" parent="."]
+
+[node name="DropBomb" parent="Ability" node_paths=PackedStringArray("character") instance=ExtResource("4_xj56n")]
+position = Vector2(-1872.6, 1257.51)
+bomb = ExtResource("5_hnt3q")
+character = NodePath("../../Orc")
+
+[node name="Weapon" type="Node2D" parent="." node_paths=PackedStringArray("controller")]
+script = ExtResource("6_4rgh3")
+controller = NodePath("..")
+
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("7_msmcw")]
+position = Vector2(3.05176e-05, 0)
+character = NodePath("../../Orc")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3x2rt")
