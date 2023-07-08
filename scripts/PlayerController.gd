@@ -9,7 +9,6 @@ func get_input():
 	if velocity.x != 0:
 		$Body/Sprite2D.flip_h = velocity.x < 0
 
-
 func _physics_process(_delta):
 	get_input()
 	if(can_move):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://uydruoig64gb"]
 
 [ext_resource type="Script" path="res://scripts/Projectile/Projectile.gd" id="1_gbqv0"]
-[ext_resource type="Texture2D" uid="uid://dnoxkjejpr0rp" path="res://assets/projectiles/arrow.png" id="2_2bvws"]
+[ext_resource type="Texture2D" uid="uid://dpsi6t40bunx2" path="res://assets/projectiles/arrow.png" id="2_2bvws"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvy2m"]
 height = 278.0
