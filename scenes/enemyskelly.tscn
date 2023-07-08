@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_p44yy"]
 [ext_resource type="Texture2D" uid="uid://cug66enowkl4g" path="res://assets/Creatures/skelly-no-arms.png" id="3_wh4s1"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_03xcb"]
-[ext_resource type="PackedScene" path="res://scenes/Weapons/arm.tscn" id="6_mr3sx"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="5_gvyd8"]
 [ext_resource type="PackedScene" uid="uid://40l46usq6bpt" path="res://scenes/enemystatemachine.tscn" id="7_jkoje"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
@@ -17,8 +17,8 @@ body = NodePath("Body")
 
 [node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_p44yy")
-weapon = NodePath("../Weapon/MeleeWeapon")
-ability = NodePath("")
+weapon = NodePath("../Weapon/ranged_weapon")
+ability = NodePath("../Ability/Dodge")
 max_health = 200
 health = 10
 damage = 10.0
@@ -35,10 +35,8 @@ character = NodePath("../..")
 
 [node name="Weapon" type="Node2D" parent="."]
 
-[node name="MeleeWeapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("6_mr3sx")]
-position = Vector2(0, -237.5)
-scale = Vector2(2.12, 2.12)
-character = NodePath("../../Body")
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("5_gvyd8")]
+character = NodePath("../..")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")
