@@ -12,8 +12,3 @@ func move(speed: float, direction: Vector2):
 	move_and_slide()
 
 
-func get_target() -> Vector2:
-    return Vector2.ZERO
-    pass
-
-
