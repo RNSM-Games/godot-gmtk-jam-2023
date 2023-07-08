@@ -11,6 +11,7 @@ current_state = NodePath("Chase")
 
 [node name="Chase" type="Node" parent="."]
 script = ExtResource("2_fjifn")
+attack_radius = 200.0
 
 [node name="Attack" type="Node" parent="."]
 script = ExtResource("3_ksmg3")
