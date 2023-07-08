@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
-[ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="3_b3fc8"]
+[ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="3_8w4d1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
 
@@ -11,19 +11,19 @@
 [node name="creature" type="Node2D" parent="."]
 script = ExtResource("1_gfria")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="creature"]
+[node name="Sprite" type="CharacterBody2D" parent="creature"]
 script = ExtResource("1_ihk3i")
 
-[node name="Sprite2D" type="Sprite2D" parent="creature/CharacterBody2D"]
-
-[node name="Hitbox" type="CollisionShape2D" parent="creature/CharacterBody2D"]
-position = Vector2(5.89993, -6.30002)
-scale = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_6nqvy")
+[node name="Sprite2D" type="Sprite2D" parent="creature/Sprite"]
 
 [node name="Ability" type="Node2D" parent="creature"]
-script = ExtResource("3_b3fc8")
+script = ExtResource("3_8w4d1")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="creature"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="creature/RigidBody2D"]
+position = Vector2(5.89993, -6.30002)
+shape = SubResource("CapsuleShape2D_6nqvy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5.89993, -6.30002)
-scale = Vector2(1, 1)
