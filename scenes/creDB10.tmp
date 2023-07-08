@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://df5w6j0sqxdht"]
+[gd_scene load_steps=5 format=3 uid="uid://df5w6j0sqxdht"]
 
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
 [ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="3_8w4d1"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://melee_weapon.tscn" id="4_k1fhd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
 
@@ -11,14 +10,12 @@
 
 [node name="creature" type="Node2D" parent="."]
 script = ExtResource("1_gfria")
+image = null
 
 [node name="Sprite" type="CharacterBody2D" parent="creature"]
 script = ExtResource("1_ihk3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="creature/Sprite"]
-
-[node name="MeleeWeapon" parent="creature/Sprite" instance=ExtResource("4_k1fhd")]
-position = Vector2(6, -6)
 
 [node name="Ability" type="Node2D" parent="creature"]
 script = ExtResource("3_8w4d1")

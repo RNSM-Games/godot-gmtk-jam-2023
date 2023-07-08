@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwdpe2i4jwy56"]
+[gd_scene load_steps=3 format=3 uid="uid://baeucdnt8e717"]
 
-[ext_resource type="PackedScene" uid="uid://c8ycxlb0oc011" path="res://scenes/creature.tscn" id="1_f5lw2"]
-[ext_resource type="PackedScene" uid="uid://d32pe4yclug6" path="res://melee_weapon.tscn" id="2_4wim6"]
+[ext_resource type="PackedScene" uid="uid://df5w6j0sqxdht" path="res://scenes/creature.tscn" id="1_f5lw2"]
+[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://melee_weapon.tscn" id="2_4wim6"]
 
 [node name="Test" type="Node"]
 
