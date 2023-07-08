@@ -1,12 +1,19 @@
 extends Node
 class_name State
 
+@export var enemy_controller : CharacterBody2D
+@export var enemy : Node2D
+
 signal transitioned
 
+func do_setup():
+	enemy_controller = get_parent().enemy_controller
+	enemy = get_parent().enemy
+
 func _ready():
-	pass
+	call_deferred("do_setup")
 	
-func enter(_msg := {}):
+func enter():
 	pass
 
 func exit():
