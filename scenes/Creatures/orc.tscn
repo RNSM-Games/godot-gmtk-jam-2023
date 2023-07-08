@@ -3,15 +3,16 @@
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_xtit3"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_kp8ym"]
 [ext_resource type="Texture2D" uid="uid://drr06ohki6mpk" path="res://assets/Creatures/skelly.png" id="3_cyrcy"]
-[ext_resource type="PackedScene" path="res://scenes/Abilities/Dodge.tscn" id="4_ov2fk"]
+[ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_ov2fk"]
 [ext_resource type="PackedScene" uid="uid://dr5qc5sqloe2t" path="res://scenes/melee_weapon.tscn" id="4_unfta"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
 
-[node name="Orc" type="CharacterBody2D" groups=["player"]]
+[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["player"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_xtit3")
+body = NodePath("Body")
 
 [node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_kp8ym")
@@ -36,7 +37,7 @@ character_bod = NodePath("../../Hitbox")
 [node name="MeleeWeapon" parent="Weapon" node_paths=PackedStringArray("character", "character_bod") instance=ExtResource("4_unfta")]
 position = Vector2(0, 1)
 character = NodePath("../..")
-character_bod = NodePath("../../Hitbox")
+character_bod = NodePath("../../Body")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")
