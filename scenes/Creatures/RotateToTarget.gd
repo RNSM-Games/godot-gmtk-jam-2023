@@ -23,5 +23,6 @@ func _process(delta):
 
 
 func get_angle():
+	print("JOEMAMA", controller.get_target() - controller.position)
 	return controller.get_target() - controller.position
 	
