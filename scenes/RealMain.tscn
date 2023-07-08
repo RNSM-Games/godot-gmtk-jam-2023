@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8eivdsbl17hq"]
 
 [ext_resource type="Texture2D" uid="uid://c6sgqjy5u7pnb" path="res://assets/Environment/Background.png" id="1_8llla"]
-[ext_resource type="PackedScene" uid="uid://e7yx4q87o35s" path="res://scenes/Creatures/orc.tscn" id="2_o41ne"]
+[ext_resource type="PackedScene" uid="uid://bgpgnif1lrxe5" path="res://scenes/Creatures/orc.tscn" id="2_o41ne"]
 
 [node name="RealMain" type="Node"]
 
