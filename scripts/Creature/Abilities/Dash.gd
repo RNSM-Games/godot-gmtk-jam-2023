@@ -38,6 +38,6 @@ func _physics_process(delta):
 
 
 
-func action(_damage: float):
+func action(damage: float):
 	dash_pos= character.position + character.move_direction*dash_dist
 	can_dash = false

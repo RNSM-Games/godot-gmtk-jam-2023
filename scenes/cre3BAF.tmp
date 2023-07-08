@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://df5w6j0sqxdht"]
+
+[ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
+[ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="3_8w4d1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
+
+[node name="scene" type="Node"]
+
+[node name="creature" type="Node2D" parent="."]
+script = ExtResource("1_gfria")
+image = null
+
+[node name="Sprite" type="CharacterBody2D" parent="creature"]
+script = ExtResource("1_ihk3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="creature/Sprite"]
+
+[node name="Ability" type="Node2D" parent="creature"]
+script = ExtResource("3_8w4d1")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="creature"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="creature/RigidBody2D"]
+position = Vector2(5.89993, -6.30002)
+shape = SubResource("CapsuleShape2D_6nqvy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5.89993, -6.30002)
+
+[connection signal="body_entered" from="creature/RigidBody2D" to="creature/Ability" method="_on_rigid_body_2d_body_entered"]

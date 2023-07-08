@@ -1,4 +1,7 @@
+
 [gd_scene load_steps=10 format=3 uid="uid://8t67gxnsuimx"]
+
+
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_iv5hx"]
 [ext_resource type="Texture2D" path="res://assets/weapon/bow_shot.png" id="2_fm63p"]
