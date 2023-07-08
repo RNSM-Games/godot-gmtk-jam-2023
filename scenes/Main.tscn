@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq40d3g5n1huo"]
+[gd_scene load_steps=3 format=3 uid="uid://ybx1eihtkkk4"]
 
-[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/skelly.tscn" id="1_rpmap"]
-[ext_resource type="PackedScene" uid="uid://csf0y5ldwfxya" path="res://scenes/enemyskelly.tscn" id="2_4jj4f"]
+[ext_resource type="PackedScene" path="res://scenes/Creatures/skelly.tscn" id="1_rpmap"]
+[ext_resource type="PackedScene" uid="uid://ciw3324tkwwix" path="res://scenes/enemyskelly.tscn" id="2_4jj4f"]
 
 [node name="Main" type="Node2D"]
 

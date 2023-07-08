@@ -1,4 +1,4 @@
-extends State
+extends EnemyState
 class_name Chase
 
 @export var attack_radius : float
@@ -6,7 +6,7 @@ class_name Chase
 var target : CharacterBody2D
 var rng = RandomNumberGenerator.new()
 
-func enter():
+func enter(_msg := {}):
 	pass
 
 func exit():
@@ -20,6 +20,9 @@ func update(_delta : float):
 func process_physics(_delta : float):
 	if !target:
 		return
+		
+	if !wr_enemy.get_ref():
+		return
 	
 	var dir = target.global_position - enemy_controller.global_position
 	enemy_controller.move_direction = dir.normalized()
@@ -29,16 +32,16 @@ func process_physics(_delta : float):
 			var my_random_number = rng.randi_range(1, 100)
 			if my_random_number == 1:
 				enemy_controller.move_direction = -enemy_controller.move_direction
-				# transitioned.emit(self, "useability")
+				#transitioned.emit(self, "useability")
 				return
 
-		transitioned.emit(self, "attack")
+		transitioned.emit(self, "attack", {target = target})
 		return
 	elif dir.length() > attack_radius * 3:
 		var my_random_number = rng.randi_range(1, 100)
 	
 		if my_random_number == 1:
-			# transitioned.emit(self, "useability")
+			#transitioned.emit(self, "useability")
 			return
 
 	if(enemy_controller.can_move):

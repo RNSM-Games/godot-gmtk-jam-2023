@@ -1,4 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1l6mfi481ulf"]
+<<<<<<<< HEAD:scenes/EnemyStateSystem.tscn
+[gd_scene load_steps=5 format=3 uid="uid://cwsh66e70xclr"]
+========
+[gd_scene load_steps=5 format=3 uid="uid://40l46usq6bpt"]
+>>>>>>>> a986a57 (Merge branch 'main' into deck):scenes/enemystatemachine.tscn
 
 [ext_resource type="Script" path="res://scripts/Enemy/StateMachine.gd" id="1_8td2r"]
 [ext_resource type="Script" path="res://scripts/Enemy/States/Chase.gd" id="2_5b61s"]
