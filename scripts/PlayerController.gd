@@ -6,6 +6,8 @@ func get_input():
 	var direction : Vector2 = Vector2.ZERO
 	direction = Input.get_vector("left", "right", "up", "down")
 	move_direction = direction
+	if velocity.x != 0:
+		$Body/Sprite2D.flip_h = velocity.x < 0
 
 
 func _physics_process(_delta):

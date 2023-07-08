@@ -8,12 +8,12 @@ func _init():
 	self.damage_modifier = 25.0
 
 func action(damage:float):
-	
 	self.attack_damage = damage * damage_modifier
 	$AnimationPlayer.play(animation)
 
 func spawn_projectile():
 	var projectile = projectile_scene.instantiate()
 	owner.add_child(projectile)
-	projectile.update_rotation($Node2D.rotation, $Node2D/ProjectileSpawnPoint.position)
+	projectile.update_rotation($Node2D.rotation, $Node2D.position)
+
 
