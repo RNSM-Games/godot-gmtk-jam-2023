@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4dhw7r8l21ep"]
+
+[ext_resource type="Script" path="res://scenes/bomb.gd" id="1_fc5ic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8owf"]
+
+[node name="bomb" type="Node2D" node_paths=PackedStringArray("shape")]
+script = ExtResource("1_fc5ic")
+shape = NodePath("ShapeCast2D")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+shape = SubResource("CircleShape2D_k8owf")
+target_position = Vector2(0, 0)
+margin = 24.77
+
+[node name="Camera2D" type="Camera2D" parent="."]

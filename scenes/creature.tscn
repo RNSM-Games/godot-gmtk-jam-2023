@@ -10,10 +10,9 @@
 
 [node name="scene" type="Node"]
 
-[node name="creature" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
+[node name="creature" type="Node2D" parent="." node_paths=PackedStringArray("ability", "sprite")]
 position = Vector2(-1, 0)
 script = ExtResource("1_y3eme")
-weapon = NodePath("Sprite/MeleeWeapon")
 ability = NodePath("Ability")
 health = 10
 damage = 10.0
