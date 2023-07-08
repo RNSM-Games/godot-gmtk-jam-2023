@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://blgd3t0mnnsfy"]
+
+[ext_resource type="Script" path="res://scripts/Deck/Card.gd" id="1_ejvq8"]
+[ext_resource type="Texture2D" uid="uid://c6iginxj8bffg" path="res://assets/Card/Skelly card.png" id="2_qetq7"]
+[ext_resource type="PackedScene" uid="uid://d32pe4yclug6" path="res://melee_weapon.tscn" id="3_sgrrt"]
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_ejvq8")
+sprite = ExtResource("2_qetq7")
+card_content = ExtResource("3_sgrrt")

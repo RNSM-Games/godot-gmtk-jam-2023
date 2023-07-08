@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d32pe4yclug6"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_iv5hx"]
-[ext_resource type="Texture2D" uid="uid://knhwy3xkiw8w" path="res://assets/stormbreaker.png" id="2_yjnih"]
+[ext_resource type="Texture2D" uid="uid://knhwy3xkiw8w" path="res://assets/Weapons/stormbreaker.png" id="2_yjnih"]
 
 [sub_resource type="Animation" id="Animation_trbp3"]
 length = 0.001
@@ -67,7 +67,7 @@ _data = {
 radius = 269.48
 height = 605.96
 
-[node name="MeleeWeapon" type="Node2D"]
+[node name="MeleeWeapon" type="Node2D" groups=["weapon"]]
 script = ExtResource("1_iv5hx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
 
-[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["player"]]
+[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_xtit3")
 body = NodePath("Body")
@@ -40,4 +40,5 @@ character = NodePath("../..")
 character_bod = NodePath("../../Body")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_3x2rt")
