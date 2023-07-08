@@ -8,15 +8,9 @@ func get_input():
 	move_direction = direction
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	get_input()
-	if(can_move):
-		move(get_node('Body').speed,move_direction)
-		move_and_slide()
+	move(get_parent().speed,move_direction)
+	move_and_slide()
 
-
-func _input(event):
-	if event.is_action_pressed("Attack"):
-		body.attack()
-	if event.is_action_pressed("Ability"):
-		body.use_ability()
+	

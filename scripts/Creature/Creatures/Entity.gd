@@ -2,22 +2,19 @@ extends Node2D
 
 class_name Entity
 
-@export var health : int
-@export var damage : float
-@export var speed : float
-@export var can_take_damage : bool = true
+var health : int
+var damage : float
+var speed : float
 @export var sprite : Sprite2D
 
-func die():
-	queue_free()
-
-	
-
-func get_hit(dmg:int):
+func get_hit(dmg:int) -> void:
 	take_damage(dmg)
-
-
-func take_damage(dmg:int):
+	
+func take_damage(dmg:int) -> void:
+	print("taking damage: " + str(dmg))
 	health-=dmg
 	if(health <= 0):
 		die()
+
+func die() -> void:
+	queue_free()
