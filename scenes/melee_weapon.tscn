@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://yfhox77or57c"]
+
+[ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_iv5hx"]
+[ext_resource type="Texture2D" uid="uid://knhwy3xkiw8w" path="res://assets/Weapons/stormbreaker.png" id="2_yjnih"]
+
+[sub_resource type="Animation" id="Animation_trbp3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Sprite2D/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_34r76"]
+resource_name = "sword_swing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [3.48787e-16, 3.14159, 3.48787e-16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Sprite2D/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o1m61"]
+_data = {
+"RESET": SubResource("Animation_trbp3"),
+"sword_swing": SubResource("Animation_34r76")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvm63"]
+radius = 269.48
+height = 605.96
+
+[node name="MeleeWeapon" type="Node2D"]
+script = ExtResource("1_iv5hx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o1m61")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(-95, -115)
+rotation = -1.5708
+scale = Vector2(0.368758, 0.368758)
+texture = ExtResource("2_yjnih")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
+position = Vector2(3.00006, -245)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xvm63")
+
+[connection signal="body_entered" from="Node2D/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
