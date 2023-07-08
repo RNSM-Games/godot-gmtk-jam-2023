@@ -7,7 +7,7 @@ extends Equippable
 
 
 
-func equip(character : Node2D):
+func equip(body: CollisionShape2D, character : Node2D):
     match buff_type:
         "Health":
             character.health += buff_amount

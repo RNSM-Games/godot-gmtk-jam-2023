@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cu81dail48j6j" path="res://scenes/Abilities/DropBomb.tscn" id="4_isn7h"]
 [ext_resource type="PackedScene" uid="uid://b4dhw7r8l21ep" path="res://scenes/bomb.tscn" id="5_pirqx"]
 [ext_resource type="Script" path="res://scenes/Creatures/RotateToTarget.gd" id="6_g2yio"]
-[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_0tjrb"]
 [ext_resource type="Texture2D" uid="uid://ceawfgqg0kw04" path="res://assets/Creatures/Skelly-arm.png" id="8_nm7jy"]
+[ext_resource type="PackedScene" uid="uid://bihdgdn04mndc" path="res://scenes/melee_weapon.tscn" id="8_qnpr7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
@@ -20,7 +20,7 @@ body = NodePath("Skeleton")
 
 [node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_55v0m")
-weapon = NodePath("../Weapon/ranged_weapon")
+weapon = NodePath("../Weapon/Sprite2D/MeleeWeapon")
 ability = NodePath("../Ability/DropBomb")
 health = 10
 damage = 10.0
@@ -38,18 +38,18 @@ bomb = ExtResource("5_pirqx")
 character = NodePath("../../Skeleton")
 
 [node name="Weapon" type="Node2D" parent="." node_paths=PackedStringArray("controller")]
-position = Vector2(292.5, -135)
+position = Vector2(462.5, -125)
 script = ExtResource("6_g2yio")
 controller = NodePath("..")
 
-[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("7_0tjrb")]
-position = Vector2(3.05176e-05, 0)
-character = NodePath("../../Skeleton")
-
 [node name="Sprite2D" type="Sprite2D" parent="Weapon"]
-rotation = -0.523599
+position = Vector2(175, 182.5)
 texture = ExtResource("8_nm7jy")
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
+[node name="MeleeWeapon" parent="Weapon/Sprite2D" node_paths=PackedStringArray("character") instance=ExtResource("8_qnpr7")]
+position = Vector2(215, -20)
 scale = Vector2(1, 1)
+character = NodePath("../../../Skeleton")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")

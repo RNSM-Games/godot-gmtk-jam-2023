@@ -6,8 +6,7 @@ func _init():
 
 func action(damage:float):
 	self.attack_damage = damage * damage_modifier
-	
-	$AnimationPlayer.play("sword_swing")
+	# get_parent().get_node("AnimationPlayer").play("Swing")
 
 func _on_area_2d_body_entered(body):
 	if body.get_parent().is_in_group("entity"):

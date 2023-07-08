@@ -11,4 +11,8 @@ sprite = ExtResource("2_qetq7")
 card_content = ExtResource("3_rxmiy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-335, 0)
 zoom = Vector2(0.335, 0.335)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qetq7")

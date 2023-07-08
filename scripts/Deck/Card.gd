@@ -7,12 +7,6 @@ var spawn_time : float = 3
 
 
 
-func _process(delta):
-	if(spawn_time <= 0 ):
-		_spawn(true)
-	spawn_time -= delta
-
-
 
 func _spawn(isPlayer : bool):
 	var card_type := card_content.get_state().get_node_groups(0)
