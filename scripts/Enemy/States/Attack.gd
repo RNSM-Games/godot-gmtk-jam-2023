@@ -25,9 +25,10 @@ func update(_delta : float):
 func process_physics(_delta : float):
 	if !wr_enemy.get_ref():
 		return
-		
+
 	if attack_target:
 		var dir = attack_target.global_position - enemy_controller.global_position
+		
 		if dir.length() > 200:
 			transitioned.emit(self, "chase")
 			return
