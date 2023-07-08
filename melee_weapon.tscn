@@ -1,7 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://d32pe4yclug6"]
+[gd_scene load_steps=7 format=3 uid="uid://d32pe4yclug6"]
 
 [ext_resource type="Script" path="res://scripts/MeleeWeapon.gd" id="1_cgaco"]
 [ext_resource type="Texture2D" uid="uid://2koo0vk0qv5k" path="res://assets/sword.png" id="2_j5ync"]
+
+[sub_resource type="Animation" id="Animation_34r76"]
+resource_name = "sword_swing"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [3.48787e-16, 3.14159, 3.48787e-16]
+}
+
+[sub_resource type="Animation" id="Animation_trbp3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o1m61"]
+_data = {
+"RESET": SubResource("Animation_trbp3"),
+"sword_swing": SubResource("Animation_34r76")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghrgg"]
 size = Vector2(400, 400)
@@ -11,14 +48,22 @@ size = Vector2(400, 400)
 [node name="MeleeWeapon" type="Node" parent="."]
 script = ExtResource("1_cgaco")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o1m61")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(2.08165e-12, -200)
 texture = ExtResource("2_j5ync")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
 shape = SubResource("RectangleShape2D_ghrgg")
+disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[connection signal="area_entered" from="Sprite2D/Area2D" to="MeleeWeapon" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Node2D/Sprite2D/Area2D" to="MeleeWeapon" method="_on_area_2d_area_entered"]
