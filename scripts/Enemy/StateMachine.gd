@@ -1,19 +1,11 @@
 extends Node
 class_name StateMachine
 
-# change from enemy
-var enemy_controller : CharacterBody2D
-var enemy : Node2D
-
 @export var current_state : State
 var states : Dictionary
 
 func _ready():
-	assert(get_parent().move, "must have controller")
-	enemy_controller = get_parent()
-
-	assert(get_parent().get_node("Body"), "must have body")
-	enemy = get_parent().get_node("Body")
+	await owner.ready
 
 	for child in get_children():
 		if child is State:
@@ -29,7 +21,7 @@ func _process(delta):
 	if current_state:
 		current_state.update(delta)
 
-func on_state_transition(state, new_state_name):
+func on_state_transition(state, new_state_name, msg: Dictionary = {}):
 	if current_state != state:
 		return
 
@@ -40,7 +32,7 @@ func on_state_transition(state, new_state_name):
 	if current_state:
 		current_state.exit()
 	
-	newState.enter()
+	newState.enter(msg)
 	current_state = newState
 
 
