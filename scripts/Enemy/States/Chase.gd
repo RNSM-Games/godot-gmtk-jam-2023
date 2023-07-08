@@ -20,6 +20,9 @@ func update(_delta : float):
 func process_physics(_delta : float):
 	if !target:
 		return
+		
+	if !wr_enemy.get_ref():
+		return
 	
 	var dir = target.global_position - enemy_controller.global_position
 	enemy_controller.move_direction = dir.normalized()

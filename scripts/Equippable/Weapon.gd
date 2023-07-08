@@ -2,7 +2,7 @@ extends ActionItem
 class_name Weapon
 
 var sprite
-var attack_damage := 0.0
+var attack_damage := 1.0
 var rotation
 
 func move(mouse_direction: Vector2) -> void:

@@ -19,8 +19,9 @@ body = NodePath(".")
 script = ExtResource("2_jbdul")
 weapon = NodePath("../Weapon/MeleeWeapon")
 ability = NodePath("../Ability/Charge")
-health = 20
-damage = 10.0
+max_health = 200
+health = 200
+damage = 1.0
 speed = 100.0
 sprite = NodePath("Sprite2D")
 
