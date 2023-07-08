@@ -33,7 +33,7 @@ func _physics_process(delta):
 		time_to_charge -= delta
 
 
-func action(dmg: float):
+func action(_dmg: float):
 	charge_pos = character.position + character.move_direction*charge_dist
 	can_charge = false
 

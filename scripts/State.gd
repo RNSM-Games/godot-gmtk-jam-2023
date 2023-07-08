@@ -21,8 +21,8 @@ func enter():
 func exit():
 	pass
 
-func update(delta : float):
+func update(_delta : float):
 	pass
 
-func process_physics(delta : float):
+func process_physics(_delta : float):
 	pass

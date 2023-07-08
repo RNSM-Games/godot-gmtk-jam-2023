@@ -16,6 +16,6 @@ func _ready():
 	character = get_parent().get_parent()
 	character_bod = get_parent().get_parent().get_node("Body")
 
-func action(damage:float):
+func action(_damage:float):
 	assert(false, "Please override `some_method()` in the derived script.")
 

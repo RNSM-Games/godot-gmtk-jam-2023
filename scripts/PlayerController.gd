@@ -8,10 +8,11 @@ func get_input():
 	move_direction = direction
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	if(can_move):
 		move(get_node('Body').speed,move_direction)
+		move_and_slide()
 
 
 func _input(event):

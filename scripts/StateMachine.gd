@@ -12,7 +12,7 @@ func _ready():
 	assert(get_parent().move, "must have controller")
 	enemy_controller = get_parent()
 
-	assert(get_parent().get_node("Body").speed, "must have controller")
+	assert(get_parent().get_node("Body"), "must have body")
 	enemy = get_parent().get_node("Body")
 
 	for child in get_children():
