@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://vdh04xa0nv61"]
+[gd_scene load_steps=8 format=3 uid="uid://b8os1j4od05im"]
 
-[ext_resource type="Texture2D" uid="uid://hsrcrs2qnkui" path="res://assets/weapon/bow_shot.png" id="1_4i5pq"]
 [ext_resource type="Script" path="res://scripts/Equippable/RangedWeapon.gd" id="1_4u6cf"]
-[ext_resource type="Texture2D" uid="uid://dppa8senbt30d" path="res://assets/weapon/bow.png" id="2_7l1xj"]
+[ext_resource type="Texture2D" uid="uid://hsrcrs2qnkui" path="res://assets/Weapons/bow_shot.png" id="2_08r3m"]
+[ext_resource type="Texture2D" uid="uid://ldgobxq07sks" path="res://assets/Weapons/bow.png" id="3_1es1n"]
 
 [sub_resource type="Animation" id="Animation_trbp3"]
 length = 0.5
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("1_4i5pq"), ExtResource("2_7l1xj")]
+"values": [ExtResource("2_08r3m"), ExtResource("3_1es1n")]
 }
 
 [sub_resource type="Animation" id="Animation_34r76"]
@@ -84,7 +84,7 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 position = Vector2(61, 1)
 scale = Vector2(0.368758, 0.368758)
-texture = ExtResource("2_7l1xj")
+texture = ExtResource("3_1es1n")
 
 [node name="ProjectileSpawnPoint" type="Node2D" parent="Node2D"]
 position = Vector2(25, 2.08165e-12)

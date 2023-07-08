@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfr5pe03m4dd7"]
+
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
+[ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="1_y3eme"]
+[ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="3_8w4d1"]
+[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/Creatures/skelly.png" id="3_tiunk"]
+[ext_resource type="PackedScene" uid="uid://8t67gxnsuimx" path="res://scenes/Weapons/melee_weapon.tscn" id="4_k1fhd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
+
+[node name="scene" type="Node"]
+
+[node name="creature" type="Node2D" parent="." node_paths=PackedStringArray("ability", "sprite")]
+position = Vector2(-1, 0)
+script = ExtResource("1_y3eme")
+ability = NodePath("Ability")
+health = 10
+damage = 10.0
+speed = 50.0
+sprite = NodePath("Sprite/Sprite2D")
+
+[node name="Sprite" type="CharacterBody2D" parent="creature"]
+script = ExtResource("1_ihk3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="creature/Sprite"]
+texture = ExtResource("3_tiunk")
+
+[node name="MeleeWeapon" parent="creature/Sprite" instance=ExtResource("4_k1fhd")]
+position = Vector2(6, -6)
+
+[node name="Ability" type="Node2D" parent="creature"]
+script = ExtResource("3_8w4d1")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="creature"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="creature/RigidBody2D"]
+position = Vector2(5.89993, -6.30002)
+shape = SubResource("CapsuleShape2D_6nqvy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5.89993, -6.30002)
+
+[connection signal="body_entered" from="creature/RigidBody2D" to="creature/Ability" method="_on_rigid_body_2d_body_entered"]

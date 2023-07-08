@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvbrglad7yi46"]
+
+[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/orc.tscn" id="1_arwb7"]
+[ext_resource type="PackedScene" uid="uid://u35x2pdhbtgs" path="res://scenes/enemyorc.tscn" id="2_660j7"]
+
+[node name="Test" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)
+
+[node name="Orc" parent="." instance=ExtResource("1_arwb7")]
+position = Vector2(1, 0)
+
+[node name="EnemyOrc" parent="." instance=ExtResource("2_660j7")]
+position = Vector2(905, 1)

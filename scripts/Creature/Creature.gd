@@ -3,7 +3,7 @@ extends Entity
 class_name Creature
 
 @export var weapon : Weapon
-var ability : ActionItem
+@export var ability : ActionItem
 
 func equip():
 	pass
