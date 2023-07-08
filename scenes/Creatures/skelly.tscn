@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://7akb8ba62jlv"]
+[gd_scene load_steps=9 format=3 uid="uid://7akb8ba62jlv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ef1h7"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_55v0m"]
 [ext_resource type="Texture2D" uid="uid://cug66enowkl4g" path="res://assets/Creatures/skelly-no-arms.png" id="3_pkll7"]
 [ext_resource type="PackedScene" uid="uid://cu81dail48j6j" path="res://scenes/Abilities/DropBomb.tscn" id="4_isn7h"]
 [ext_resource type="PackedScene" uid="uid://b4dhw7r8l21ep" path="res://scenes/bomb.tscn" id="5_pirqx"]
-[ext_resource type="PackedScene" uid="uid://c4ttddkeg5sfh" path="res://scenes/Weapons/arm.tscn" id="6_xm8hi"]
+[ext_resource type="Script" path="res://scenes/Creatures/RotateToTarget.gd" id="6_g2yio"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_0tjrb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
@@ -17,7 +18,7 @@ body = NodePath("Skeleton")
 
 [node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_55v0m")
-weapon = NodePath("../Weapon/MeleeWeapon")
+weapon = NodePath("../Weapon/ranged_weapon")
 ability = NodePath("../Ability/DropBomb")
 health = 10
 damage = 10.0
@@ -33,17 +34,14 @@ texture = ExtResource("3_pkll7")
 position = Vector2(-1872.6, 1257.51)
 bomb = ExtResource("5_pirqx")
 
-[node name="Weapon" type="Node2D" parent="."]
+[node name="Weapon" type="Node2D" parent="." node_paths=PackedStringArray("controller")]
+script = ExtResource("6_g2yio")
+controller = NodePath("..")
 
-[node name="MeleeWeapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("6_xm8hi")]
-position = Vector2(0, -237.5)
-scale = Vector2(2.12, 2.12)
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("7_0tjrb")]
+position = Vector2(3.05176e-05, 0)
 character = NodePath("../../Skeleton")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_3x2rt")
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(397.5, -310)
-scale = Vector2(24837.5, 53.0041)

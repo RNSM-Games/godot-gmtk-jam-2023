@@ -2,6 +2,7 @@ extends Node2D
 
 
 @export var controller : CharacterBody2D
+var target : Vector2
 
 
 
@@ -12,7 +13,11 @@ func _ready():
 	pass # Replace with function body.
 
 
+func _physics_process(delta):
+	var target = controller.get_target()
+	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var target = controller.get_target()
+	position = Vector2.ONE*target
 	
