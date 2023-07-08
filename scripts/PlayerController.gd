@@ -13,4 +13,3 @@ func _physics_process(delta):
 	get_input()
 	if(can_move):
 		move(get_node('Body').speed,move_direction)
-		move_and_slide()

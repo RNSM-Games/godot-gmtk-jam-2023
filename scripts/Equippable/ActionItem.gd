@@ -10,11 +10,11 @@ var character_bod : Node2D
 
 
 func _ready():
-	assert(get_parent().get_node("Collider/Hitbox"))
-	hitbox = get_parent().get_node("Collider/Hitbox")
-	assert(get_parent())
-	character = get_parent()
-	character_bod = get_parent().get_node("Body")
+	assert(get_parent().get_parent().get_node("Collider/Hitbox"))
+	hitbox = get_parent().get_parent().get_node("Collider/Hitbox")
+	assert(get_parent().get_parent())
+	character = get_parent().get_parent()
+	character_bod = get_parent().get_parent().get_node("Body")
 
 func action(damage:float):
 	assert(false, "Please override `some_method()` in the derived script.")

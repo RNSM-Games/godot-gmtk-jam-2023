@@ -4,6 +4,6 @@
 
 [node name="Test" type="Node"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_arwb7")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Orc" parent="." instance=ExtResource("1_arwb7")]
