@@ -12,3 +12,5 @@ func _physics_process(delta):
 	get_input()
 	move(get_parent().speed,move_direction)
 	move_and_slide()
+
+	

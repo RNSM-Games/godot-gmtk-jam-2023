@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwdpe2i4jwy56"]
 
 [ext_resource type="PackedScene" uid="uid://c8ycxlb0oc011" path="res://scenes/creature.tscn" id="1_f5lw2"]
-[ext_resource type="PackedScene" uid="uid://d32pe4yclug6" path="res://melee_weapon.tscn" id="2_4wim6"]
+[ext_resource type="PackedScene" uid="uid://bfcq83a1e0au8" path="res://scripts/Projectile/melee_weapon.tscn" id="2_4wim6"]
 
 [node name="Test" type="Node"]
 

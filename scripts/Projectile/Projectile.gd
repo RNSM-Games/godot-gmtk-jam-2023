@@ -15,7 +15,7 @@ func update_rotation(rotation, position):
 	print("updating")
 #	$Sprite2D.rotation = rotation
 	self.position = position
-	self.rotation = rotation + PI / 2
+	self.rotation = rotation + PI/2
 	self.start_pos = position
 
 func _physics_process(delta):
@@ -36,7 +36,7 @@ func on_hit_entity(target:Entity):
 func on_hit_other(target):
 	print("yo im hittin other")
 	
-	# despawn()
+#	despawn()
 
 func despawn():
 	print("yo im dead man")
