@@ -8,12 +8,10 @@ var hitbox : CollisionShape2D
 @export var character_bod : Node2D
 
 
-func _ready():
-	assert(get_parent().get_parent().get_node("Hitbox"), "could not find hitbox")
-	hitbox = get_parent().get_parent().get_node("Hitbox")
-	assert(get_parent().get_parent(), "could not find body")
+func equip(character_node: Node2D):
+	hitbox = character_node.get_parent().get_node("Collider/Hitbox")
 	character = get_parent().get_parent()
-	character_bod = get_parent().get_parent().get_node("Body")
+	character_bod = character_node
 
 func action(_damage:float):
 	assert(false, "Please override `some_method()` in the derived script.")

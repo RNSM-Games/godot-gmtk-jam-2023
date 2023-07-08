@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://yfhox77or57c"]
+[gd_scene load_steps=7 format=3 uid="uid://dr5qc5sqloe2t"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_iv5hx"]
 [ext_resource type="Texture2D" uid="uid://knhwy3xkiw8w" path="res://assets/Weapons/stormbreaker.png" id="2_yjnih"]
