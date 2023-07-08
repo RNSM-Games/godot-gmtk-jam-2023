@@ -2,8 +2,10 @@ extends Equippable
 class_name ActionItem
 
 var cooldown : float
-var damage_modifier : float
-var hitbox : CollisionShape2D
+@export var damage_modifier : float
+@export var hitbox : CollisionShape2D
+var character : CharacterBody2D
+var character_bod : Node2D
 
 
 
