@@ -8,11 +8,9 @@ var colliders : Array
 
 func _init():
 	curr_time = time_to_explode
-	print(curr_time)
 	set_physics_process(true)
 
 func _physics_process(delta):
-	print(curr_time)
 	curr_time -= delta
 	if(curr_time<= 0):
 		colliders = aoe.get_overlapping_bodies()

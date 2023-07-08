@@ -13,8 +13,6 @@ func _init():
 
 
 func _physics_process(delta):
-	print(time_to_dash)
-	print(can_dash, is_dashing)
 
 	if (!is_dashing && !can_dash && time_to_dash == cooldown):
 		is_dashing = true
@@ -41,6 +39,5 @@ func _physics_process(delta):
 
 
 func action(damage: float):
-	print("BABA")
 	dash_pos= character.position + character.move_direction*dash_dist
 	can_dash = false

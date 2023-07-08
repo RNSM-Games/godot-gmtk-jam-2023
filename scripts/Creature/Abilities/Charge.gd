@@ -14,8 +14,6 @@ func _init():
 
 
 func _physics_process(delta):
-	print(time_to_charge)
-	print(can_charge, is_charging)
 
 	if (!is_charging&& !can_charge && time_to_charge == cooldown):
 		is_charging= true
@@ -36,8 +34,7 @@ func _physics_process(delta):
 
 
 func action(dmg: float):
-	print("BABA")
-	charge_pos= character.position + character.move_direction*charge_dist
+	charge_pos = character.position + character.move_direction*charge_dist
 	can_charge = false
 
 

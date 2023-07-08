@@ -9,7 +9,13 @@ func get_input():
 
 
 func _physics_process(delta):
-	print(self.position)
 	get_input()
 	if(can_move):
 		move(get_node('Body').speed,move_direction)
+
+
+func _input(event):
+	if event.is_action_pressed("Attack"):
+		body.attack()
+	if event.is_action_pressed("Ability"):
+		body.use_ability()

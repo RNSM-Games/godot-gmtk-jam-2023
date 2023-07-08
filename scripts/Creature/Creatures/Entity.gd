@@ -13,7 +13,6 @@ func get_hit(dmg:int) -> void:
 
 
 func take_damage(dmg:int) -> void:
-	print("taking damage: " + str(dmg))
 	health-=dmg
 	if(health <= 0):
 		die()
