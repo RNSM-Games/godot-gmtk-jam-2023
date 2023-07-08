@@ -14,3 +14,10 @@ func _init():
 func _ready():
 	sprite = get_node("CharacterBody2D/Sprite2D")
 	sprite.texture = load(image)
+	self.ability = get_node("Ability")
+
+
+func _input(event):
+	if event.is_action_pressed("Ability"):
+		print("HEllo")
+		ability.action()

@@ -2,7 +2,7 @@ extends Entity
 
 class_name Creature
 
-var weapon : Weapon
+@export var weapon : Weapon
 var ability : ActionItem
 
 

@@ -1,24 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://df5w6j0sqxdht"]
+[gd_scene load_steps=5 format=3 uid="uid://df5w6j0sqxdht"]
 
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
+[ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="3_b3fc8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
 
-[node name="creature" type="Node"]
+[node name="scene" type="Node"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="creature" type="Node2D" parent="."]
 script = ExtResource("1_gfria")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="creature"]
 script = ExtResource("1_ihk3i")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="creature/CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D"]
+[node name="Hitbox" type="CollisionShape2D" parent="creature/CharacterBody2D"]
 position = Vector2(5.89993, -6.30002)
 scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_6nqvy")
+
+[node name="Ability" type="Node2D" parent="creature"]
+script = ExtResource("3_b3fc8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5.89993, -6.30002)
