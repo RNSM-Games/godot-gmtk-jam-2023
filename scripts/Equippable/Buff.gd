@@ -8,11 +8,11 @@ extends Equippable
 
 
 func equip(character : Node2D):
-    match buff_type:
-        "Health":
-            character.health += buff_amount
-        "Damage":
-            character.health += buff_amount
-        "Move Speed":
-            character.health += buff_amount
-        
+	match buff_type:
+		"Health":
+			character.health += buff_amount
+		"Damage":
+			character.health += buff_amount
+		"Move Speed":
+			character.health += buff_amount
+		
