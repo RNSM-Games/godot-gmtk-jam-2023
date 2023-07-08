@@ -8,11 +8,16 @@ var can_move : bool = true
 
 
 func move(speed: float, direction: Vector2):
-    velocity = speed * direction
-    move_and_slide()
+	velocity = speed * direction
+	position.x = clamp(position.x, 0, get_viewport_rect().size
+.x)
+	position.y = clamp(position.y, 0, get_viewport_rect().size
+.y)
+	move_and_slide()
 
 
 func get_target() -> Vector2:
-    return Vector2.ZERO
+	return Vector2.ZERO
+
 
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq40d3g5n1huo"]
+
+[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/skelly.tscn" id="1_rpmap"]
+[ext_resource type="PackedScene" uid="uid://csf0y5ldwfxya" path="res://scenes/enemyskelly.tscn" id="2_4jj4f"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Orc" parent="." instance=ExtResource("1_rpmap")]
+
+[node name="Orc2" parent="." instance=ExtResource("2_4jj4f")]
+position = Vector2(1000, 0)
