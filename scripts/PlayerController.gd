@@ -22,3 +22,6 @@ func _input(event):
 		body.attack()
 	if event.is_action_pressed("Ability"):
 		body.use_ability()
+
+func get_target() -> Vector2:
+	return get_viewport().get_mouse_position()
