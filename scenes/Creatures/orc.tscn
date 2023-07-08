@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_kp8ym"]
 [ext_resource type="Texture2D" uid="uid://drr06ohki6mpk" path="res://assets/Creatures/skelly.png" id="3_cyrcy"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_ov2fk"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://scenes/melee_weapon.tscn" id="4_unfta"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="5_arrq7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
@@ -16,7 +16,7 @@ body = NodePath("Body")
 
 [node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_kp8ym")
-weapon = NodePath("../Weapon/MeleeWeapon")
+weapon = NodePath("../Weapon/ranged_weapon")
 ability = NodePath("../Ability/Dodge")
 max_health = 10000
 health = 10
@@ -29,12 +29,15 @@ texture = ExtResource("3_cyrcy")
 
 [node name="Ability" type="Node2D" parent="."]
 
-[node name="Dodge" parent="Ability" instance=ExtResource("4_ov2fk")]
+[node name="Dodge" parent="Ability" node_paths=PackedStringArray("character", "character_bod") instance=ExtResource("4_ov2fk")]
+character = NodePath("../..")
+character_bod = NodePath("../../Hitbox")
 
 [node name="Weapon" type="Node2D" parent="."]
 
-[node name="MeleeWeapon" parent="Weapon" instance=ExtResource("4_unfta")]
-position = Vector2(0, 1)
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character", "character_bod") instance=ExtResource("5_arrq7")]
+character = NodePath("../..")
+character_bod = NodePath("../../Body")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")

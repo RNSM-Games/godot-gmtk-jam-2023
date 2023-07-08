@@ -10,10 +10,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 207.66
 
-[node name="EnemyOrc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["entity"]]
+[node name="EnemyOrc" type="CharacterBody2D" groups=["entity"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_oyvmp")
-body = NodePath(".")
 
 [node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_jbdul")
