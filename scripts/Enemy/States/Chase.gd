@@ -12,12 +12,12 @@ func enter():
 func exit():
 	pass
 
-func update(delta : float):
+func update(_delta : float):
 	if !target:
 		target = get_tree().get_first_node_in_group("player")
 	
 
-func process_physics(delta : float):
+func process_physics(_delta : float):
 	if !target:
 		return
 	

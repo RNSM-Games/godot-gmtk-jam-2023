@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpdkwg7vsst2"]
 
-[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="1_e5ago"]
+[ext_resource type="Script" path="res://scripts/Enemy/StateMachine.gd" id="1_e5ago"]
 [ext_resource type="Script" path="res://scripts/Enemy/States/Chase.gd" id="2_fjifn"]
 [ext_resource type="Script" path="res://scripts/Enemy/States/Attack.gd" id="3_ksmg3"]
 [ext_resource type="Script" path="res://scripts/Enemy/States/UseAbility.gd" id="4_clo4x"]
