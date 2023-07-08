@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxesepst32xuk"]
-
-[ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="1_ho037"]
-
-[node name="Charge" type="Node2D"]
-script = ExtResource("1_ho037")

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqfwsrqxa22ff"]
-
-[ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="1_qlf80"]
-
-[node name="Dodge" type="Node2D"]
-script = ExtResource("1_qlf80")
