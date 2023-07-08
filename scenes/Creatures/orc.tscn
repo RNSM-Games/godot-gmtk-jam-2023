@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 442.12
 
-[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body")]
+[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["player"]]
 script = ExtResource("1_xtit3")
 body = NodePath("Body")
 
