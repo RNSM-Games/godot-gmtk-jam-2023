@@ -21,26 +21,12 @@ script = ExtResource("1_ihk3i")
 position = Vector2(5.89993, -6.30002)
 shape = SubResource("CapsuleShape2D_6nqvy")
 
-[node name="MeleeWeapon" parent="Node2D/CharacterBody2D" instance=ExtResource("3_8stic")]
-position = Vector2(198, -144)
-rotation = -1.5708
-
 [node name="Ability" type="Node" parent="Node2D"]
 script = ExtResource("4_vvpua")
 
-[node name="Node2D2" type="Node2D" parent="." groups=["entity"]]
-script = ExtResource("1_gfria")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D2" groups=["entity"]]
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D2/CharacterBody2D"]
-
-[node name="Hitbox" type="CollisionShape2D" parent="Node2D2/CharacterBody2D"]
-position = Vector2(5.89993, -6.30002)
-shape = SubResource("CapsuleShape2D_6nqvy")
-
-[node name="Ability" type="Node" parent="Node2D2"]
-script = ExtResource("4_vvpua")
+[node name="MeleeWeapon" parent="Node2D" instance=ExtResource("3_8stic")]
+position = Vector2(198, -144)
+rotation = -1.5708
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5.89993, -6.30002)

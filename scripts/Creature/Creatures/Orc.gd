@@ -16,12 +16,12 @@ func _ready():
 	sprite = get_node("CharacterBody2D/Sprite2D")
 	sprite.texture = load(image)
 	self.ability = get_node("Ability")
-	self.weapon = get_node("MeleeWeapon")
-
+	self.weapon = get_node("CharacterBody2D/MeleeWeapon")
 
 func _input(event):
 	if event.is_action_pressed("attack"):
-		weapon.action()
+		if(weapon != null):
+			weapon.action(damage)
 	if event.is_action_pressed("Ability"):
 		print("HEllo")
-		ability.action()
+		ability.action(damage)

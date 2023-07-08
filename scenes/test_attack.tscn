@@ -1,19 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://i8mqy7qej7jd"]
+[gd_scene load_steps=6 format=3 uid="uid://bevs7pwo5o48w"]
 
-[ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
-[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
-[ext_resource type="PackedScene" uid="uid://b55qhb1nsj2ia" path="res://melee_weapon.tscn" id="3_8stic"]
-[ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="4_vvpua"]
+[ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_eortc"]
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="2_fgxd7"]
+[ext_resource type="PackedScene" uid="uid://b55qhb1nsj2ia" path="res://melee_weapon.tscn" id="3_ditjs"]
+[ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="4_2rw8c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
 
 [node name="creature" type="Node"]
 
 [node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("1_gfria")
+script = ExtResource("1_eortc")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" groups=["entity"]]
-script = ExtResource("1_ihk3i")
+script = ExtResource("2_fgxd7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D"]
 
@@ -21,15 +21,15 @@ script = ExtResource("1_ihk3i")
 position = Vector2(5.89993, -6.30002)
 shape = SubResource("CapsuleShape2D_6nqvy")
 
-[node name="MeleeWeapon" parent="Node2D/CharacterBody2D" instance=ExtResource("3_8stic")]
+[node name="MeleeWeapon" parent="Node2D/CharacterBody2D" instance=ExtResource("3_ditjs")]
 position = Vector2(198, -144)
 rotation = -1.5708
 
 [node name="Ability" type="Node" parent="Node2D"]
-script = ExtResource("4_vvpua")
+script = ExtResource("4_2rw8c")
 
 [node name="Node2D2" type="Node2D" parent="." groups=["entity"]]
-script = ExtResource("1_gfria")
+script = ExtResource("1_eortc")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D2" groups=["entity"]]
 
@@ -40,7 +40,7 @@ position = Vector2(5.89993, -6.30002)
 shape = SubResource("CapsuleShape2D_6nqvy")
 
 [node name="Ability" type="Node" parent="Node2D2"]
-script = ExtResource("4_vvpua")
+script = ExtResource("4_2rw8c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5.89993, -6.30002)
