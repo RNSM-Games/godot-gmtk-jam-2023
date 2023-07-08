@@ -3,17 +3,16 @@
 [ext_resource type="Script" path="res://scripts/Enemy/EnemyController.gd" id="1_oyvmp"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_jbdul"]
 [ext_resource type="Texture2D" uid="uid://drr06ohki6mpk" path="res://assets/Creatures/skelly.png" id="3_gmivg"]
-[ext_resource type="PackedScene" uid="uid://bxesepst32xuk" path="res://scenes/Abilities/Charge.tscn" id="4_5vts4"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://scenes/melee_weapon.tscn" id="6_oedsm"]
-[ext_resource type="PackedScene" uid="uid://cpdkwg7vsst2" path="res://scenes/EnemyStateSystem.tscn" id="7_uqh8o"]
+[ext_resource type="PackedScene" path="res://scenes/Abilities/Charge.tscn" id="4_5vts4"]
+[ext_resource type="PackedScene" uid="uid://dr5qc5sqloe2t" path="res://scenes/melee_weapon.tscn" id="6_oedsm"]
+[ext_resource type="PackedScene" uid="uid://cpdkwg7vsst2" path="res://scenes/Abilities/EnemyStateSystem.tscn" id="7_uqh8o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 207.66
 
-[node name="EnemyOrc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["entity"]]
+[node name="EnemyOrc" type="CharacterBody2D" groups=["entity"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_oyvmp")
-body = NodePath(".")
 
 [node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_jbdul")
