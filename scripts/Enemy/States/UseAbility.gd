@@ -1,7 +1,7 @@
-extends EnemyState
+extends State
 class_name UseAbility
 
-func enter(_msg := {}):
+func enter():
 	enemy.use_ability()
 
 func exit():
