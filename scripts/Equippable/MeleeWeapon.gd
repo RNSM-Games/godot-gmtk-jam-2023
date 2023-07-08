@@ -1,6 +1,8 @@
 extends Weapon
 class_name MeleeWeapon
 
+
+
 func _init():
 	self.damage_modifier = 25.0
 

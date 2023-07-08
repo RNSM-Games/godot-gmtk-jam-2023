@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://vdh04xa0nv61"]
+[gd_scene load_steps=8 format=3 uid="uid://b8os1j4od05im"]
 
-[ext_resource type="Texture2D" uid="uid://hsrcrs2qnkui" path="res://assets/weapon/bow_shot.png" id="1_4i5pq"]
+[ext_resource type="Texture2D" path="res://assets/weapon/bow_shot.png" id="1_4i5pq"]
 [ext_resource type="Script" path="res://scripts/Equippable/RangedWeapon.gd" id="1_4u6cf"]
-[ext_resource type="Texture2D" uid="uid://dppa8senbt30d" path="res://assets/weapon/bow.png" id="2_7l1xj"]
+[ext_resource type="Texture2D" path="res://assets/weapon/bow.png" id="2_7l1xj"]
 
 [sub_resource type="Animation" id="Animation_trbp3"]
 length = 0.5

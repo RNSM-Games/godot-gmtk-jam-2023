@@ -44,3 +44,4 @@ func process_physics(delta : float):
 
 	if(enemy_controller.can_move):
 		enemy_controller.move(enemy.speed, enemy_controller.move_direction)
+		enemy_controller.move_and_slide()

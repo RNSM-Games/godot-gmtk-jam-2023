@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hsrcrs2qnkui"
-path="res://.godot/imported/bow_shot.png-1fcd9bd159d061b6ce544f644c1c4ca3.ctex"
+uid="uid://bjgvlygim4fph"
+path="res://.godot/imported/Quetz_transparent.png-9bc30fae574a2ff5e738e320f15e8e5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapon/bow_shot.png"
-dest_files=["res://.godot/imported/bow_shot.png-1fcd9bd159d061b6ce544f644c1c4ca3.ctex"]
+source_file="res://assets/Quetz_transparent.png"
+dest_files=["res://.godot/imported/Quetz_transparent.png-9bc30fae574a2ff5e738e320f15e8e5c.ctex"]
 
 [params]
 

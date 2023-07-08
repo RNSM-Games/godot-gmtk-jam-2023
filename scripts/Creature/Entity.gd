@@ -8,14 +8,16 @@ class_name Entity
 @export var can_take_damage : bool = true
 @export var sprite : Sprite2D
 
-func get_hit(dmg:int) -> void:
+func die():
+	queue_free()
+
+	
+
+func get_hit(dmg:int):
 	take_damage(dmg)
 
 
-func take_damage(dmg:int) -> void:
+func take_damage(dmg:int):
 	health-=dmg
 	if(health <= 0):
 		die()
-
-func die() -> void:
-	self.queue_free()
