@@ -7,4 +7,5 @@ var hitbox : CollisionShape2D
 
 
 func action():
-	assert(false, "Please override `some_method()` in the derived script.")
+    assert(false, "Please override `some_method()` in the derived script.")
+
