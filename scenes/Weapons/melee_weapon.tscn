@@ -85,15 +85,15 @@ libraries = {
 }
 
 [node name="Node2D" type="Node2D" parent="."]
-rotation = 3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(89, 4)
+position = Vector2(-94.9999, -31.0002)
 rotation = -1.5708
 scale = Vector2(0.368758, 0.368758)
 texture = ExtResource("2_sg5vt")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
 visible = false

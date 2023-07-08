@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://i8mqy7qej7jd"]
+[gd_scene load_steps=6 format=3 uid="uid://c8ycxlb0oc011"]
 
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_gfria"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]

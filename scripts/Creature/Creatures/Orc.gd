@@ -18,9 +18,11 @@ func _ready():
 	self.weapon = get_node("CharacterBody2D/ranged_weapon")
 
 func _input(event):
+	if(weapon != null):
+		weapon.move(get_global_mouse_position())
 	if event.is_action_pressed("attack"):
-#		if(weapon != null):
-		weapon.action(damage)
+		if(weapon != null):
+			weapon.action(damage)
 	if event.is_action_pressed("Ability"):
 		print("HEllo")
 		ability.action(damage)

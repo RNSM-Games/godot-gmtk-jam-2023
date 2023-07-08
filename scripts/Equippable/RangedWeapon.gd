@@ -14,5 +14,6 @@ func action(damage:float):
 
 func spawn_projectile():
 	var projectile = projectile_scene.instantiate()
-	add_child(projectile)
-	projectile.update_rotation($Node2D.rotation, $Node2D/Sprite2D/ProjectileSpawnPoint.position)
+	owner.add_child(projectile)
+	projectile.update_rotation($Node2D.rotation, $Node2D/ProjectileSpawnPoint.position)
+
