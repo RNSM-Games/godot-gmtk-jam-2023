@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://e7yx4q87o35s"]
+[gd_scene load_steps=15 format=3 uid="uid://e7yx4q87o35s"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_c6isf"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_85ptd"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b4dhw7r8l21ep" path="res://scenes/bomb.tscn" id="5_hnt3q"]
 [ext_resource type="Script" path="res://scenes/Creatures/RotateToTarget.gd" id="6_4rgh3"]
 [ext_resource type="Texture2D" uid="uid://crmgm4mhh5due" path="res://assets/Creatures/orc_4.png" id="6_wbhvt"]
+[ext_resource type="Texture2D" uid="uid://d2xj12vv5reow" path="res://assets/Creatures/orc_5.png" id="7_ec2tl"]
 [ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_msmcw"]
+[ext_resource type="Texture2D" uid="uid://di077akjd0tdq" path="res://assets/Creatures/orc_6.png" id="8_b8ba3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2f4up"]
 animations = [{
@@ -25,6 +27,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_wbhvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ec2tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b8ba3")
 }],
 "loop": true,
 "name": &"walk",
@@ -51,7 +59,7 @@ speed = 600.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Orc"]
 sprite_frames = SubResource("SpriteFrames_2f4up")
 animation = &"walk"
-frame_progress = 0.878763
+frame_progress = 0.319935
 
 [node name="Ability" type="Node2D" parent="."]
 
