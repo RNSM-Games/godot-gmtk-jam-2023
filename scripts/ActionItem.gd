@@ -7,5 +7,5 @@ var hitbox : CollisionShape2D
 
 
 func action():
-    pass
+	pass
 
