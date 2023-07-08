@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1g7o6nedc4bv"
-path="res://.godot/imported/d3k02xj-fe9ab83c-d871-4f0a-898e-443061446995.png-35af6e3328836ab16562fef3a698972a.ctex"
+uid="uid://knhwy3xkiw8w"
+path="res://.godot/imported/stormbreaker.png-076d1a837fa3119945e9923cdb8a15f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/d3k02xj-fe9ab83c-d871-4f0a-898e-443061446995.png"
-dest_files=["res://.godot/imported/d3k02xj-fe9ab83c-d871-4f0a-898e-443061446995.png-35af6e3328836ab16562fef3a698972a.ctex"]
+source_file="res://assets/weapon/stormbreaker.png"
+dest_files=["res://.godot/imported/stormbreaker.png-076d1a837fa3119945e9923cdb8a15f5.ctex"]
 
 [params]
 
