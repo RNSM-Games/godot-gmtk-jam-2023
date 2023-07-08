@@ -17,14 +17,14 @@ func _physics_process(delta):
 
 	if (!is_charging&& !can_charge && time_to_charge == cooldown):
 		is_charging= true
-		character_bod.can_take_damage = false
-		character.can_move = false
+		character.can_take_damage = false
+		character.get_parent().can_move = false
 	elif(is_charging):
 		character.position = lerp(character.position,charge_pos, .4)
 	if(character.position.round() == charge_pos.round()):
 		is_charging= false
-		character_bod.can_take_damage = true
-		character.can_move = true
+		character.can_take_damage = true
+		character.get_parent().can_move = true
 	if(time_to_charge <= 0 ):
 		time_to_charge = cooldown
 		can_charge = true

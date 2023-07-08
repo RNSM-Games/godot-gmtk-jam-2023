@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://blgd3t0mnnsfy"]
+
+[ext_resource type="Script" path="res://scripts/Deck/Card.gd" id="1_ejvq8"]
+[ext_resource type="Texture2D" uid="uid://c6iginxj8bffg" path="res://assets/Card/Skelly card.png" id="2_qetq7"]
+[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/skelly.tscn" id="3_rxmiy"]
+
+[node name="Card" type="Node2D"]
+scale = Vector2(1, 0.906918)
+script = ExtResource("1_ejvq8")
+sprite = ExtResource("2_qetq7")
+card_content = ExtResource("3_rxmiy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.335, 0.335)
