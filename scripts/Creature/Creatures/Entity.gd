@@ -1,8 +1,8 @@
-extends CharacterBody2D
+extends Node2D
 
 class_name Entity
 
 var health : int
 var damage : float
 var speed : float
-var sprite : Sprite2D
+@export var sprite : Sprite2D
