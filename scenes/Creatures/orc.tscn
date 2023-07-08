@@ -1,10 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://7akb8ba62jlv"]
+[gd_scene load_steps=11 format=3 uid="uid://7akb8ba62jlv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_xtit3"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_kp8ym"]
 [ext_resource type="Texture2D" uid="uid://drr06ohki6mpk" path="res://assets/Creatures/skelly.png" id="3_cyrcy"]
+[ext_resource type="Texture2D" uid="uid://djb15m4w6q5yq" path="res://assets/Creatures/skelly_1.png" id="4_4pkw6"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_ov2fk"]
 [ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="5_arrq7"]
+[ext_resource type="Texture2D" uid="uid://me88vxy74scq" path="res://assets/Creatures/skelly_2.png" id="5_e018o"]
+[ext_resource type="Texture2D" uid="uid://7u43cm8ugvp0" path="res://assets/Creatures/skelly_3.png" id="6_2in0g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ue3om"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4pkw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e018o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2in0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2in0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e018o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4pkw6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
@@ -25,6 +54,13 @@ sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Body"]
 texture = ExtResource("3_cyrcy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+position = Vector2(642.5, 5)
+sprite_frames = SubResource("SpriteFrames_ue3om")
+animation = &"walk"
+frame = 2
+frame_progress = 0.473652
 
 [node name="Ability" type="Node2D" parent="."]
 

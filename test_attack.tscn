@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci6kq0s8wjbwp"]
+[gd_scene load_steps=2 format=3 uid="uid://bsu8142a8nrre"]
 
 [ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/orc.tscn" id="1_axn7e"]
 
