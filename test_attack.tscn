@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci6kq0s8wjbwp"]
 
-[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/orc.tscn" id="1_axn7e"]
+[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/skelly.tscn" id="1_axn7e"]
 
 [node name="Test" type="Node"]
 
