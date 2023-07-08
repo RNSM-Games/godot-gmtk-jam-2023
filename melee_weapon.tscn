@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d32pe4yclug6"]
+[gd_scene load_steps=7 format=3 uid="uid://b55qhb1nsj2ia"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_iv5hx"]
 [ext_resource type="Texture2D" uid="uid://knhwy3xkiw8w" path="res://assets/stormbreaker.png" id="2_yjnih"]
@@ -79,7 +79,7 @@ libraries = {
 rotation = 3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(89, 4)
+position = Vector2(-95, -115)
 rotation = -1.5708
 scale = Vector2(0.368758, 0.368758)
 texture = ExtResource("2_yjnih")
@@ -87,7 +87,8 @@ texture = ExtResource("2_yjnih")
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
-visible = false
 position = Vector2(3.00006, -245)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xvm63")
+
+[connection signal="body_entered" from="Node2D/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -6,6 +6,6 @@ var damage_modifier : float
 var hitbox : CollisionShape2D
 
 
-func action():
-    assert(false, "Please override `some_method()` in the derived script.")
+func action(damage:float):
+	assert(false, "Please override `some_method()` in the derived script.")
 
