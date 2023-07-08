@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://knhwy3xkiw8w"
-path="res://.godot/imported/stormbreaker.png-076d1a837fa3119945e9923cdb8a15f5.ctex"
+uid="uid://hsrcrs2qnkui"
+path="res://.godot/imported/bow_shot.png-fbcaf370e15e7f3606341441efe66f1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapon/stormbreaker.png"
-dest_files=["res://.godot/imported/stormbreaker.png-076d1a837fa3119945e9923cdb8a15f5.ctex"]
+source_file="res://assets/Weapons/bow_shot.png"
+dest_files=["res://.godot/imported/bow_shot.png-fbcaf370e15e7f3606341441efe66f1f.ctex"]
 
 [params]
 

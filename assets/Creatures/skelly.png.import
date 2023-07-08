@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpsi6t40bunx2"
-path="res://.godot/imported/arrow.png-8241e3c1aea5aec04ebebadbcff912e7.ctex"
+uid="uid://drr06ohki6mpk"
+path="res://.godot/imported/skelly.png-e445ba4292b7f3f79f1e3ea347505389.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/projectiles/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-8241e3c1aea5aec04ebebadbcff912e7.ctex"]
+source_file="res://assets/Creatures/skelly.png"
+dest_files=["res://.godot/imported/skelly.png-e445ba4292b7f3f79f1e3ea347505389.ctex"]
 
 [params]
 
