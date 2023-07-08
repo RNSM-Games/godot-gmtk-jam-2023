@@ -79,8 +79,9 @@ libraries = {
 rotation = 3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(-204, -176)
+position = Vector2(89, 4)
 rotation = -1.5708
+scale = Vector2(0.368758, 0.368758)
 texture = ExtResource("2_yjnih")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
