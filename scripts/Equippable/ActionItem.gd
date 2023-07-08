@@ -4,7 +4,8 @@ class_name ActionItem
 var cooldown : float
 var damage_modifier : float
 var hitbox : CollisionShape2D
-
+@export var character : CharacterBody2D
+@export var character_bod : Node2D
 
 
 func _ready():
