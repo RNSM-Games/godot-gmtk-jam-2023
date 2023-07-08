@@ -29,15 +29,13 @@ texture = ExtResource("3_cyrcy")
 
 [node name="Ability" type="Node2D" parent="."]
 
-[node name="Dodge" parent="Ability" node_paths=PackedStringArray("character", "character_bod") instance=ExtResource("4_ov2fk")]
+[node name="Dodge" parent="Ability" node_paths=PackedStringArray("character") instance=ExtResource("4_ov2fk")]
 character = NodePath("../..")
-character_bod = NodePath("../../Hitbox")
 
 [node name="Weapon" type="Node2D" parent="."]
 
-[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character", "character_bod") instance=ExtResource("5_arrq7")]
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("5_arrq7")]
 character = NodePath("../..")
-character_bod = NodePath("../../Body")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")

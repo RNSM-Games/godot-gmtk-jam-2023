@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtb2rj7q1o712"]
 
-[ext_resource type="Script" path="res://scripts/Equippable/Buff.gd" id="1_h34u3"]
+[ext_resource type="Script" path="res://scripts/Equippable/Buff.gd" id="1_f6h27"]
 
 [node name="Buff" type="Node2D"]
-script = ExtResource("1_h34u3")
+script = ExtResource("1_f6h27")
 buff_type = "Move Speed"
 buff_amount = 10.0
