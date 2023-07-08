@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Creature.gd" id="2_kp8ym"]
 [ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/skelly.png" id="3_cyrcy"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_ov2fk"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://scenes/melee_weapon.tscn" id="4_unfta"]
+[ext_resource type="PackedScene" path="res://scenes/melee_weapon.tscn" id="4_unfta"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 442.12
@@ -19,7 +19,7 @@ weapon = NodePath("../Weapon/MeleeWeapon")
 ability = NodePath("../Ability/Dodge")
 health = 10
 damage = 10.0
-speed = 150.0
+speed = 600.0
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Body"]

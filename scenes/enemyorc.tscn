@@ -1,40 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://u35x2pdhbtgs"]
+[gd_scene load_steps=8 format=3 uid="uid://dcxlr7hdhj7m8"]
 
 [ext_resource type="Script" path="res://scripts/Enemy/EnemyController.gd" id="1_oyvmp"]
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Creature.gd" id="2_jbdul"]
-[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/skelly.png" id="3_8ujkp"]
-[ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_jwa5x"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://scenes/melee_weapon.tscn" id="6_oedsm"]
+[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/skelly.png" id="3_gmivg"]
+[ext_resource type="PackedScene" uid="uid://bxesepst32xuk" path="res://scenes/Abilities/Charge.tscn" id="4_5vts4"]
+[ext_resource type="PackedScene" path="res://scenes/melee_weapon.tscn" id="6_oedsm"]
 [ext_resource type="PackedScene" uid="uid://cpdkwg7vsst2" path="res://scenes/Abilities/EnemyStateSystem.tscn" id="7_uqh8o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 442.12
 
-[node name="EnemyOrc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["entity"]]
+[node name="EnemyOrc" type="CharacterBody2D" groups=["entity"]]
 script = ExtResource("1_oyvmp")
-body = NodePath(".")
 
 [node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
 script = ExtResource("2_jbdul")
 weapon = NodePath("../Weapon/MeleeWeapon")
-ability = NodePath("../Ability/Dodge")
-health = 10
+ability = NodePath("../Ability/Charge")
+health = 20
 damage = 10.0
-speed = 150.0
+speed = 600.0
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Body"]
-texture = ExtResource("3_8ujkp")
+texture = ExtResource("3_gmivg")
 
 [node name="Ability" type="Node2D" parent="."]
 
-[node name="Dodge" parent="Ability" node_paths=PackedStringArray("hitbox") instance=ExtResource("4_jwa5x")]
+[node name="Charge" parent="Ability" node_paths=PackedStringArray("hitbox") instance=ExtResource("4_5vts4")]
+position = Vector2(-779.595, 922.663)
 hitbox = NodePath("../../Collider/Hitbox")
 
 [node name="Weapon" type="Node2D" parent="."]
 
 [node name="MeleeWeapon" parent="Weapon" node_paths=PackedStringArray("hitbox") instance=ExtResource("6_oedsm")]
-position = Vector2(0, 1)
+position = Vector2(-1, 1)
 hitbox = NodePath("../../Collider/Hitbox")
 
 [node name="Collider" type="RigidBody2D" parent="."]
