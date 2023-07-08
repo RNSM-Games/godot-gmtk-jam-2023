@@ -1,34 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://7akb8ba62jlv"]
+[gd_scene load_steps=12 format=3 uid="uid://7akb8ba62jlv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_xtit3"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_kp8ym"]
 [ext_resource type="Texture2D" uid="uid://drr06ohki6mpk" path="res://assets/Creatures/skelly.png" id="3_cyrcy"]
-[ext_resource type="Texture2D" uid="uid://djb15m4w6q5yq" path="res://assets/Creatures/skelly_1.png" id="4_4pkw6"]
+[ext_resource type="Texture2D" uid="uid://ngmc0ay5ofpg" path="res://assets/Creatures/orc_1.png" id="4_a6tfr"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_ov2fk"]
 [ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="5_arrq7"]
-[ext_resource type="Texture2D" uid="uid://me88vxy74scq" path="res://assets/Creatures/skelly_2.png" id="5_e018o"]
-[ext_resource type="Texture2D" uid="uid://7u43cm8ugvp0" path="res://assets/Creatures/skelly_3.png" id="6_2in0g"]
+[ext_resource type="Texture2D" uid="uid://bn05l02s7rfyp" path="res://assets/Creatures/orc_2.png" id="5_eks0e"]
+[ext_resource type="Texture2D" uid="uid://depnykfkk8k3e" path="res://assets/Creatures/orc_3.png" id="6_jkdwq"]
+[ext_resource type="Texture2D" uid="uid://j8320fly53sp" path="res://assets/Creatures/orc_4.png" id="7_ug0e3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ue3om"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4pkw6")
+"texture": ExtResource("4_a6tfr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_e018o")
+"texture": ExtResource("5_eks0e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2in0g")
+"texture": ExtResource("6_jkdwq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2in0g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_e018o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_4pkw6")
+"texture": ExtResource("7_ug0e3")
 }],
 "loop": true,
 "name": &"walk",
@@ -59,7 +54,6 @@ texture = ExtResource("3_cyrcy")
 position = Vector2(642.5, 5)
 sprite_frames = SubResource("SpriteFrames_ue3om")
 animation = &"walk"
-frame = 2
 frame_progress = 0.473652
 
 [node name="Ability" type="Node2D" parent="."]
@@ -71,7 +65,6 @@ character_bod = NodePath("../../Hitbox")
 [node name="Weapon" type="Node2D" parent="."]
 
 [node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character", "character_bod") instance=ExtResource("5_arrq7")]
-scale = Vector2(1, 1)
 character = NodePath("../..")
 character_bod = NodePath("../../Body")
 
