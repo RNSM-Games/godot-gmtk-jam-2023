@@ -36,7 +36,6 @@ character_bod = NodePath("../../Hitbox")
 [node name="Weapon" type="Node2D" parent="."]
 
 [node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character", "character_bod") instance=ExtResource("5_arrq7")]
-scale = Vector2(1, 1)
 character = NodePath("../..")
 character_bod = NodePath("../../Body")
 
