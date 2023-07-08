@@ -10,7 +10,8 @@ class_name Entity
 
 func get_hit(dmg:int) -> void:
 	take_damage(dmg)
-	
+
+
 func take_damage(dmg:int) -> void:
 	print("taking damage: " + str(dmg))
 	health-=dmg

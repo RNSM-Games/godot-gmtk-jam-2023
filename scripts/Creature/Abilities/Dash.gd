@@ -1,7 +1,6 @@
 extends ActionItem
 
 var can_dash : bool = true
-var character : CharacterBody2D
 var is_dashing : bool = false
 var dash_pos : Vector2 = Vector2.ZERO
 var dash_dist : float = 1000
@@ -11,11 +10,6 @@ func _init():
 	time_to_dash = cooldown
 	damage_modifier = 0
 
-func _ready():
-	assert(get_parent().get_node("RigidBody2D/Hitbox"))
-	hitbox = get_parent().get_node("RigidBody2D/Hitbox")
-	assert(get_parent().get_node("Sprite"))
-	character = get_parent().get_node("Sprite") 
 
 
 func _physics_process(delta):

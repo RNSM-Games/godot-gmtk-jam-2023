@@ -1,12 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://baeucdnt8e717"]
+[gd_scene load_steps=2 format=3 uid="uid://baeucdnt8e717"]
 
-[ext_resource type="PackedScene" uid="uid://df5w6j0sqxdht" path="res://scenes/creature.tscn" id="1_f5lw2"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://melee_weapon.tscn" id="2_4wim6"]
+[ext_resource type="PackedScene" uid="uid://7akb8ba62jlv" path="res://scenes/Creatures/orc.tscn" id="1_arwb7"]
 
 [node name="Test" type="Node"]
 
-[node name="MeleeWeapon" parent="." instance=ExtResource("2_4wim6")]
-position = Vector2(13, 1)
-rotation = -1.5708
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_arwb7")]
 
-[node name="creature" parent="." instance=ExtResource("1_f5lw2")]
+[node name="Camera2D" type="Camera2D" parent="."]

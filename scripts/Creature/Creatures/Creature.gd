@@ -12,6 +12,7 @@ func equip():
 
 func attack():
 	if(weapon != null):
+		print("HI")
 		weapon.action(damage)
 
 func use_ability():
@@ -19,7 +20,7 @@ func use_ability():
 	pass
 
 func _input(event):
-	if event.is_action_pressed("attack"):
+	if event.is_action_pressed("Attack"):
 		attack()
 	if event.is_action_pressed("Ability"):
 		use_ability()

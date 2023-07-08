@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Creature/Creatures/Orc.gd" id="1_eortc"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="2_fgxd7"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://melee_weapon.tscn" id="3_ditjs"]
+[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://scenes/melee_weapon.tscn" id="3_ditjs"]
 [ext_resource type="Script" path="res://scripts/Creature/Abilities/Dash.gd" id="4_2rw8c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]

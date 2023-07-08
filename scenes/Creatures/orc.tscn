@@ -1,36 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://caxem3ypo53wh"]
+[gd_scene load_steps=6 format=3 uid="uid://7akb8ba62jlv"]
 
-[ext_resource type="Script" path="res://scripts/Creature/Creatures/Creature.gd" id="1_sqhm5"]
-[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="2_a402d"]
-[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/skelly.png" id="3_kath3"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://melee_weapon.tscn" id="4_vxjk6"]
-[ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="5_n3s30"]
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_xtit3"]
+[ext_resource type="Script" path="res://scripts/Creature/Creatures/Creature.gd" id="2_kp8ym"]
+[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/skelly.png" id="3_cyrcy"]
+[ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="4_28l4r"]
+[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://scenes/melee_weapon.tscn" id="4_unfta"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
+[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body")]
+script = ExtResource("1_xtit3")
+body = NodePath("Body")
 
-[node name="Orc" type="Node2D"]
-position = Vector2(-1, 0)
-script = ExtResource("1_sqhm5")
+[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
+script = ExtResource("2_kp8ym")
+weapon = NodePath("../MeleeWeapon")
+ability = NodePath("../Ability")
 health = 10
 damage = 10.0
-speed = 50.0
+speed = 150.0
+sprite = NodePath("Sprite2D")
 
-[node name="Sprite" type="CharacterBody2D" parent="."]
-script = ExtResource("2_a402d")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite"]
-texture = ExtResource("3_kath3")
-
-[node name="MeleeWeapon" parent="Sprite" instance=ExtResource("4_vxjk6")]
-position = Vector2(6, -6)
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+texture = ExtResource("3_cyrcy")
 
 [node name="Ability" type="Node2D" parent="."]
-script = ExtResource("5_n3s30")
+script = ExtResource("4_28l4r")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="MeleeWeapon" parent="." node_paths=PackedStringArray("hitbox") instance=ExtResource("4_unfta")]
+hitbox = NodePath("../Collider/Hitbox")
 
-[node name="Hitbox" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(5.89993, -6.30002)
-shape = SubResource("CapsuleShape2D_6nqvy")
+[node name="Collider" type="RigidBody2D" parent="."]
 
-[connection signal="body_entered" from="RigidBody2D" to="Ability" method="_on_rigid_body_2d_body_entered"]
+[node name="Hitbox" type="CollisionShape2D" parent="Collider"]
