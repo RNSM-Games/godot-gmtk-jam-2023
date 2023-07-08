@@ -1,43 +1,36 @@
 extends ActionItem
 
 var can_dash : bool = true
+var character : CharacterBody2D
 var is_dashing : bool = false
-var dash_pos : Vector2 = Vector2.ZERO
-var dash_dist : float = 1000
-var time_to_dash : float
 func _init():
 	cooldown = 7
-	time_to_dash = cooldown
 	damage_modifier = 0
 
+func _ready():
+	hitbox = get_parent().get_node("CharacterBody2D/Hitbox")
+#	character = get_parent().get_node("CharacterBody2D")
 
 
-func _physics_process(delta):
-
-	if (!is_dashing && !can_dash && time_to_dash == cooldown):
-		is_dashing = true
-		# hitbox.disabled = true
-		character.can_move = false
-	elif(is_dashing):
-		character.position = lerp(character.position,dash_pos, .4)
-	if(character.position.round() == dash_pos.round()):
-		is_dashing = false
-		# hitbox.disabled = false
-		character.can_move = true
-	if(time_to_dash <= 0 ):
-		time_to_dash = cooldown
-		can_dash = true
-	
-	if(!can_dash):
-		time_to_dash -= delta
-	
-
+#func _physics_process(delta):
+#	var dash_pos : Vector2 = Vector2.ZERO
+#	if (!can_dash && !is_dashing):
+#		dash_pos= character.position + Vector2(100,100)
+#		is_dashing = true
+#		hitbox.disabled = true
+#		character.can_move = false
+#	elif(is_dashing):
+#		character.position = lerp(character.position,dash_pos, .1)
+#	if(character.position == dash_pos):
+#		is_dashing = false
+#		hitbox.disabled = false
+#	character.can_move = true
+#	can_dash = true
 
 
 
 
 
 
-func action(_damage: float):
-	dash_pos= character.position + character.move_direction*dash_dist
+func action(damage:float):
 	can_dash = false

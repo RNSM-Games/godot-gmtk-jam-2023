@@ -4,14 +4,14 @@ class_name Projectile
 
 #var direction: Vector2
 var missile_speed = 750
-var shot_range = 800
+var range = 800
 var start_pos = position
 
 func _init():
 	print("yo im spawn")
 	
 
-func update_rotation(_rotation, _position):
+func update_rotation(rotation, position):
 	print("updating")
 #	$Sprite2D.rotation = rotation
 	self.position = position
@@ -27,7 +27,7 @@ func check_range(cur_pos:Vector2):
 
 	var distance = start_pos.distance_to(cur_pos)
 	
-	if(distance > shot_range):
+	if(distance > range):
 		despawn()
 
 func on_hit_entity(target:Entity):
