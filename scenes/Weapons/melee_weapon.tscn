@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:scenes/Weapons/melee_weapon.tscn
 [gd_scene load_steps=10 format=3 uid="uid://b55qhb1nsj2ia"]
-========
-[gd_scene load_steps=7 format=3 uid="uid://yfhox77or57c"]
->>>>>>>> creature:scenes/melee_weapon.tscn
+
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_iv5hx"]
 [ext_resource type="Texture2D" uid="uid://hsrcrs2qnkui" path="res://assets/weapon/bow_shot.png" id="2_fm63p"]

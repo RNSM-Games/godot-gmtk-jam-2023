@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfr5pe03m4dd7"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ihk3i"]
-[ext_resource type="Script" path="res://scripts/Creature/Creatures/Creature.gd" id="1_y3eme"]
+[ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="1_y3eme"]
 [ext_resource type="Script" path="res://scripts/Creature/Abilities/Charge.gd" id="3_8w4d1"]
-[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/skelly.png" id="3_tiunk"]
-[ext_resource type="PackedScene" uid="uid://yfhox77or57c" path="res://scenes/melee_weapon.tscn" id="4_k1fhd"]
+[ext_resource type="Texture2D" uid="uid://umpmllmshnjx" path="res://assets/creature/skelly.png" id="3_tiunk"]
+[ext_resource type="PackedScene" uid="uid://b55qhb1nsj2ia" path="res://scenes/Weapons/melee_weapon.tscn" id="4_k1fhd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nqvy"]
 
