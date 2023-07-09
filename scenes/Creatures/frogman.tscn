@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dr4uk7bjmapcp"]
+[gd_scene load_steps=16 format=3 uid="uid://dr4uk7bjmapcp"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_1qkcv"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_4n8ag"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cn11st6sbl5ht" path="res://assets/Creatures/frogman_4.png" id="6_brwkt"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="6_ti27c"]
 [ext_resource type="Texture2D" uid="uid://cq0vjwq6sm7mh" path="res://assets/Creatures/frogman_5.png" id="7_f2yas"]
-[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_vg17c"]
 [ext_resource type="Texture2D" uid="uid://dm5mn3wxfkmvt" path="res://assets/Creatures/frogman_6.png" id="8_sc1yn"]
 [ext_resource type="Texture2D" uid="uid://b50aexepxywu4" path="res://assets/Creatures/frogman_7.png" id="9_w1y52"]
+[ext_resource type="Script" path="res://scripts/RotateToTarget.gd" id="11_cqit5"]
+[ext_resource type="Texture2D" uid="uid://1f53wjy6yiee" path="res://assets/Creatures/frogman_arm.png" id="12_iaklh"]
+[ext_resource type="PackedScene" uid="uid://8t67gxnsuimx" path="res://scenes/Weapons/melee_weapon.tscn" id="13_vmnb8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xacgo"]
 animations = [{
@@ -49,15 +51,15 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_1qkcv")
 body = NodePath("Body")
 
-[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("ability")]
 script = ExtResource("2_4n8ag")
-weapon = NodePath("../Weapon/ranged_weapon")
 ability = NodePath("../Ability/Dodge")
 health = 10
 damage = 1.0
 speed = 600.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+position = Vector2(85, -2.5)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_xacgo")
 animation = &"walk"
@@ -69,9 +71,18 @@ frame_progress = 0.196165
 character = NodePath("../..")
 
 [node name="Weapon" type="Node2D" parent="."]
+position = Vector2(292.5, -100)
+script = ExtResource("11_cqit5")
 
-[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("7_vg17c")]
-character = NodePath("../..")
+[node name="Sprite2D" type="Sprite2D" parent="Weapon"]
+position = Vector2(130, 90)
+scale = Vector2(-1, 1)
+texture = ExtResource("12_iaklh")
+
+[node name="MeleeWeapon" parent="Weapon/Sprite2D" node_paths=PackedStringArray("character") instance=ExtResource("13_vmnb8")]
+position = Vector2(-242.5, -2.49998)
+scale = Vector2(-1, 1)
+character = NodePath("../../../Body")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")
