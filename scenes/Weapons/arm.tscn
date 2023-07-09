@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4ttddkeg5sfh"]
+[gd_scene load_steps=7 format=3 uid="uid://c4ttddkeg5sfh"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_vsapq"]
-[ext_resource type="Texture2D" uid="uid://ceawfgqg0kw04" path="res://assets/Creatures/Skelly-arm.png" id="2_fgcmu"]
 
 [sub_resource type="Animation" id="Animation_trbp3"]
 length = 0.5
@@ -74,7 +73,7 @@ _data = {
 radius = 50.7
 height = 176.5
 
-[node name="MeleeWeapon" type="Node2D"]
+[node name="MeleeWeapon2" type="Node2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_vsapq")
 
@@ -90,12 +89,11 @@ rotation = 0.523598
 position = Vector2(87.8609, -73.8205)
 rotation = -1.5708
 scale = Vector2(0.368758, 0.368758)
-texture = ExtResource("2_fgcmu")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
-position = Vector2(100.337, 43.3892)
+position = Vector2(-26.852, -62.7801)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xvm63")
 debug_color = Color(0.639216, 0.521569, 0.219608, 0.662745)
