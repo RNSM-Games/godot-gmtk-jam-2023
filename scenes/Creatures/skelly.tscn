@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b5pioy0ce8k64" path="res://assets/Creatures/skelly_3.png" id="5_wjrer"]
 [ext_resource type="Script" path="res://scripts/RotateToTarget.gd" id="8_g7cp8"]
 [ext_resource type="Texture2D" uid="uid://ceawfgqg0kw04" path="res://assets/Creatures/Skelly-arm.png" id="8_nm7jy"]
-[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="10_4s5nq"]
+[ext_resource type="PackedScene" uid="uid://8t67gxnsuimx" path="res://scenes/Weapons/sword.tscn" id="10_335j5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5vuy"]
 animations = [{
@@ -29,18 +29,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
-radius = 164.59
+radius = 94.1408
 
 [node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
-position = Vector2(0, 3)
+position = Vector2(869, 431)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ef1h7")
 body = NodePath("Skeleton")
 
-[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("ability")]
 position = Vector2(2.5, 4.76837e-07)
 script = ExtResource("2_55v0m")
-weapon = NodePath("../Weapon/Sprite2D/ranged_weapon")
 ability = NodePath("../Ability/DropBomb")
 health = 10
 damage = 10.0
@@ -53,7 +52,7 @@ animation = &"walk"
 [node name="Ability" type="Node2D" parent="."]
 
 [node name="DropBomb" parent="Ability" node_paths=PackedStringArray("character") instance=ExtResource("4_isn7h")]
-position = Vector2(-1872.6, 1257.51)
+position = Vector2(-0.000244141, -0.00012207)
 bomb = ExtResource("5_pirqx")
 character = NodePath("../../Skeleton")
 
@@ -66,8 +65,8 @@ controller = NodePath("..")
 position = Vector2(175, 182.5)
 texture = ExtResource("8_nm7jy")
 
-[node name="ranged_weapon" parent="Weapon/Sprite2D" node_paths=PackedStringArray("character") instance=ExtResource("10_4s5nq")]
-position = Vector2(2.5, 5)
+[node name="MeleeWeapon" parent="Weapon/Sprite2D" node_paths=PackedStringArray("character") instance=ExtResource("10_335j5")]
+position = Vector2(250, -37.5)
 character = NodePath("../../../Skeleton")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
