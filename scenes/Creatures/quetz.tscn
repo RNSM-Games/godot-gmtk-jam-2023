@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwlasawkvfnry"]
+
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_d8mmr"]
+[ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_7ijrq"]
+[ext_resource type="Texture2D" uid="uid://4rqk6j1kmtmp" path="res://assets/Creatures/quetz_1.png" id="3_0655h"]
+[ext_resource type="Texture2D" uid="uid://bl86ahxfr4xpp" path="res://assets/Creatures/quetz_2.png" id="4_426w4"]
+[ext_resource type="Texture2D" uid="uid://ctjarrcdwc6t1" path="res://assets/Creatures/quetz_3.png" id="5_h81oy"]
+[ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="10_rhaor"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="11_302r1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xacgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0655h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_426w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h81oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_426w4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
+radius = 164.59
+
+[node name="Quetz" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["entity", "player"]]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_d8mmr")
+body = NodePath("Body")
+
+[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+script = ExtResource("2_7ijrq")
+weapon = NodePath("../Weapon/ranged_weapon")
+ability = NodePath("../Ability/Dodge")
+health = 10
+damage = 1.0
+speed = 600.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_xacgo")
+animation = &"walk"
+frame_progress = 0.220988
+
+[node name="Ability" type="Node2D" parent="."]
+
+[node name="Dodge" parent="Ability" node_paths=PackedStringArray("character") instance=ExtResource("10_rhaor")]
+character = NodePath("../..")
+
+[node name="Weapon" type="Node2D" parent="."]
+
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("11_302r1")]
+character = NodePath("../..")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3x2rt")

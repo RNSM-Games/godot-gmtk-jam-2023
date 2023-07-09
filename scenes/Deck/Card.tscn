@@ -47,6 +47,7 @@ card_content = ExtResource("3_rxmiy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b1rou")
 animation = &"explode"
-frame_progress = 0.894645
+frame = 5
+frame_progress = 1.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
