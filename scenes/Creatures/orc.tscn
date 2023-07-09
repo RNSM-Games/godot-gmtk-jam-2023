@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgpgnif1lrxe5"]
+[gd_scene load_steps=16 format=3 uid="uid://bgpgnif1lrxe5"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_xtit3"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_kp8ym"]
 [ext_resource type="Texture2D" uid="uid://cso14ow6fn7nr" path="res://assets/Creatures/orc_1.png" id="3_2oq0s"]
 [ext_resource type="Texture2D" uid="uid://bxihvdwiewg5q" path="res://assets/Creatures/orc_2.png" id="4_l0t1v"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_ov2fk"]
-[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="5_arrq7"]
 [ext_resource type="Texture2D" uid="uid://cl3nj5xjfwyy0" path="res://assets/Creatures/orc_3.png" id="5_yywdl"]
 [ext_resource type="Texture2D" uid="uid://crmgm4mhh5due" path="res://assets/Creatures/orc_4.png" id="6_xvq8t"]
 [ext_resource type="Texture2D" uid="uid://d2xj12vv5reow" path="res://assets/Creatures/orc_5.png" id="7_8bhtf"]
 [ext_resource type="Texture2D" uid="uid://di077akjd0tdq" path="res://assets/Creatures/orc_6.png" id="8_hri1k"]
 [ext_resource type="Texture2D" uid="uid://fsnyj11jgadg" path="res://assets/Creatures/orc_7.png" id="9_eds2q"]
+[ext_resource type="Script" path="res://scripts/RotateToTarget.gd" id="11_nydj3"]
+[ext_resource type="Texture2D" uid="uid://bqbpe13fxhab" path="res://assets/Creatures/orc_arm.png" id="11_xq6y7"]
+[ext_resource type="PackedScene" uid="uid://8t67gxnsuimx" path="res://scenes/Weapons/stormbreaker.tscn" id="12_52x4k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xacgo"]
 animations = [{
@@ -51,7 +53,7 @@ body = NodePath("Body")
 
 [node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
 script = ExtResource("2_kp8ym")
-weapon = NodePath("../Weapon/ranged_weapon")
+weapon = NodePath("")
 ability = NodePath("../Ability/Dodge")
 health = 10
 damage = 1.0
@@ -68,9 +70,16 @@ frame_progress = 0.404986
 character = NodePath("../..")
 
 [node name="Weapon" type="Node2D" parent="."]
+position = Vector2(342.5, -147.5)
+script = ExtResource("11_nydj3")
 
-[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("5_arrq7")]
-character = NodePath("../..")
+[node name="Sprite2D" type="Sprite2D" parent="Weapon"]
+position = Vector2(32.5001, 215)
+texture = ExtResource("11_xq6y7")
+
+[node name="MeleeWeapon" parent="Weapon/Sprite2D" node_paths=PackedStringArray("character") instance=ExtResource("12_52x4k")]
+position = Vector2(24.9999, 90)
+character = NodePath("../../../Body")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")
