@@ -1,20 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://uydruoig64gb"]
 
 [ext_resource type="Script" path="res://scripts/Projectile/Projectile.gd" id="1_gbqv0"]
-[ext_resource type="Texture2D" uid="uid://dnoxkjejpr0rp" path="res://assets/projectiles/arrow.png" id="2_2bvws"]
+[ext_resource type="Texture2D" uid="uid://dpsi6t40bunx2" path="res://assets/projectiles/arrow.png" id="2_2bvws"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvy2m"]
 height = 278.0
 
 [node name="projectile" type="Area2D"]
+position = Vector2(0, 1)
 rotation = 1.5708
 script = ExtResource("1_gbqv0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.00049, -132)
 scale = Vector2(0.337662, 0.337662)
 texture = ExtResource("2_2bvws")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.00046, -130)
 shape = SubResource("CapsuleShape2D_mvy2m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
