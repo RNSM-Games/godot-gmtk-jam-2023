@@ -1,20 +1,13 @@
 extends Node
 class_name StateMachine
 
-# change from enemy
-var enemy_controller : CharacterBody2D
-var enemy : Node2D
 
 @export var current_state : State
 var states : Dictionary
 
 func _ready():
-	assert(get_parent().move, "must have controller")
-	enemy_controller = get_parent()
-
-	assert(get_parent().get_node("Body"), "must have body")
-	enemy = get_parent().get_node("Body")
-
+	await owner.ready
+	
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child

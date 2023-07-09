@@ -1,35 +1,55 @@
-[gd_scene load_steps=10 format=3 uid="uid://wdnbvavs3ff2"]
+[gd_scene load_steps=14 format=3 uid="uid://cupnol2cmadcm"]
 
 [ext_resource type="Script" path="res://scripts/Enemy/EnemyController.gd" id="1_5hin0"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_r5epx"]
-[ext_resource type="Texture2D" uid="uid://cug66enowkl4g" path="res://assets/Creatures/skelly-no-arms.png" id="3_f7rw3"]
+[ext_resource type="Texture2D" uid="uid://bewutkjfihbxx" path="res://assets/Creatures/skelly_1.png" id="3_8ules"]
 [ext_resource type="PackedScene" uid="uid://cu81dail48j6j" path="res://scenes/Abilities/DropBomb.tscn" id="4_wjb2m"]
+[ext_resource type="Texture2D" uid="uid://cgavrio7xpn6j" path="res://assets/Creatures/skelly_2.png" id="4_xerhv"]
+[ext_resource type="Texture2D" uid="uid://b5pioy0ce8k64" path="res://assets/Creatures/skelly_3.png" id="5_3fikx"]
 [ext_resource type="PackedScene" uid="uid://b4dhw7r8l21ep" path="res://scenes/bomb.tscn" id="5_r83h4"]
-[ext_resource type="Script" path="res://scenes/Creatures/RotateToTarget.gd" id="6_g1pxv"]
+[ext_resource type="Script" path="res://scripts/RotateToTarget.gd" id="6_g1pxv"]
 [ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_jrma6"]
 [ext_resource type="PackedScene" uid="uid://ds1xgy1q2c6bs" path="res://scenes/enemystatemachine.tscn" id="8_htrf1"]
+[ext_resource type="Texture2D" uid="uid://ceawfgqg0kw04" path="res://assets/Creatures/Skelly-arm.png" id="9_vahvr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5vuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8ules")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xerhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3fikx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
 radius = 164.59
 
 [node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
-position = Vector2(0, 2)
+position = Vector2(0, 3)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_5hin0")
-body = NodePath(".")
+body = NodePath("Skeleton")
 
-[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
+[node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+position = Vector2(2.5, 4.76837e-07)
 script = ExtResource("2_r5epx")
-weapon = NodePath("../Weapon/ranged_weapon")
+weapon = NodePath("../Weapon/Sprite2D/ranged_weapon")
 ability = NodePath("../Ability/DropBomb")
-max_health = 200
 health = 10
 damage = 10.0
-speed = 100.0
-sprite = NodePath("Sprite2D")
+speed = 600.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton"]
-texture = ExtResource("3_f7rw3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton"]
+sprite_frames = SubResource("SpriteFrames_s5vuy")
+animation = &"walk"
 
 [node name="Ability" type="Node2D" parent="."]
 
@@ -39,12 +59,17 @@ bomb = ExtResource("5_r83h4")
 character = NodePath("../../Skeleton")
 
 [node name="Weapon" type="Node2D" parent="." node_paths=PackedStringArray("controller")]
+position = Vector2(462.5, -122.5)
 script = ExtResource("6_g1pxv")
 controller = NodePath("..")
 
-[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("7_jrma6")]
-position = Vector2(3.05176e-05, 0)
-character = NodePath("../../Skeleton")
+[node name="Sprite2D" type="Sprite2D" parent="Weapon"]
+position = Vector2(175, 182.5)
+texture = ExtResource("9_vahvr")
+
+[node name="ranged_weapon" parent="Weapon/Sprite2D" node_paths=PackedStringArray("character") instance=ExtResource("7_jrma6")]
+position = Vector2(2.5, 5)
+character = NodePath("../../../Skeleton")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")
