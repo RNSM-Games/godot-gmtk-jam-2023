@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/RealMain.gd" id="1_3u71l"]
 [ext_resource type="Texture2D" uid="uid://c6sgqjy5u7pnb" path="res://assets/Environment/Background.png" id="1_8llla"]
-[ext_resource type="PackedScene" uid="uid://blgd3t0mnnsfy" path="res://scenes/Deck/Card.tscn" id="4_keudc"]
+[ext_resource type="PackedScene" uid="uid://cwlasawkvfnry" path="res://scenes/Creatures/quetz.tscn" id="4_avqss"]
 
 [node name="RealMain" type="Node"]
 script = ExtResource("1_3u71l")
@@ -17,8 +17,6 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="Card" parent="." instance=ExtResource("4_keudc")]
-position = Vector2(500, 500)
+[node name="Quetz" parent="." instance=ExtResource("4_avqss")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="cardExploded" from="Card" to="." method="_on_card_card_exploded"]
