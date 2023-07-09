@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwlasawkvfnry"]
+[gd_scene load_steps=9 format=3 uid="uid://dmgsweawan0vf"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_d8mmr"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_7ijrq"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bl86ahxfr4xpp" path="res://assets/Creatures/quetz_2.png" id="4_426w4"]
 [ext_resource type="Texture2D" uid="uid://ctjarrcdwc6t1" path="res://assets/Creatures/quetz_3.png" id="5_h81oy"]
 [ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="10_rhaor"]
-[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="11_302r1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xacgo"]
 animations = [{
@@ -36,9 +35,8 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_d8mmr")
 body = NodePath("Body")
 
-[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("ability")]
 script = ExtResource("2_7ijrq")
-weapon = NodePath("../Weapon/ranged_weapon")
 ability = NodePath("../Ability/Dodge")
 health = 10
 damage = 1.0
@@ -56,9 +54,6 @@ frame_progress = 0.220988
 character = NodePath("../..")
 
 [node name="Weapon" type="Node2D" parent="."]
-
-[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("11_302r1")]
-character = NodePath("../..")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")
