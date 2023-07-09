@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dpsi6t40bunx2" path="res://assets/projectiles/arrow.png" id="2_u0673"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvm63"]
-radius = 269.48
-height = 605.96
+radius = 85.06
+height = 500.16
 
 [node name="MeleeWeapon" type="Node2D"]
 script = ExtResource("1_iv5hx")
@@ -13,14 +13,12 @@ script = ExtResource("1_iv5hx")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" groups=["weapon"]]
+position = Vector2(0, -79)
 scale = Vector2(0.368758, 0.368758)
 texture = ExtResource("2_u0673")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
-visible = false
-position = Vector2(3.00006, -245)
-rotation = 1.5708
+position = Vector2(0, -311.858)
 shape = SubResource("CapsuleShape2D_xvm63")

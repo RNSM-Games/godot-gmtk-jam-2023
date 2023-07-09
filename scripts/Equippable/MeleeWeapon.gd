@@ -1,6 +1,7 @@
 extends Weapon
 class_name MeleeWeapon
 
+@export var weapon_hitbox : CollisionShape2D
 
 func _init():
 	damage_modifier = 25.0

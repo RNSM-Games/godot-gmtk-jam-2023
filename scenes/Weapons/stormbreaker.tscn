@@ -17,10 +17,8 @@ scale = Vector2(0.368758, 0.368758)
 texture = ExtResource("2_ro0o3")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
-visible = false
 position = Vector2(3.00006, -245)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xvm63")

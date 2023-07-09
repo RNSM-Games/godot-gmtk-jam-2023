@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcftp6e50clv0"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/MeleeWeapon.gd" id="1_xnc6c"]
-[ext_resource type="Texture2D" uid="uid://ceawfgqg0kw04" path="res://assets/Creatures/Skelly-arm.png" id="2_4m88b"]
+[ext_resource type="Texture2D" uid="uid://ldgobxq07sks" path="res://assets/Weapons/bow.png" id="2_cdf2g"]
 
 [sub_resource type="Animation" id="Animation_trbp3"]
 length = 0.5
@@ -71,8 +71,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvm63"]
-radius = 50.7
-height = 176.5
+radius = 215.919
+height = 491.108
 
 [node name="MeleeWeapon" type="Node2D"]
 position = Vector2(1, 0)
@@ -87,15 +87,15 @@ libraries = {
 rotation = 0.523598
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" groups=["weapon"]]
-position = Vector2(87.8609, -73.8205)
+position = Vector2(127.78, -50.6794)
 rotation = -1.5708
 scale = Vector2(0.368758, 0.368758)
-texture = ExtResource("2_4m88b")
+texture = ExtResource("2_cdf2g")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
-position = Vector2(100.337, 43.3892)
+position = Vector2(77.8639, -38.6916)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xvm63")
 debug_color = Color(0.639216, 0.521569, 0.219608, 0.662745)
