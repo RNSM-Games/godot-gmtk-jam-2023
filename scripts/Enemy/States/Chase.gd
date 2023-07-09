@@ -1,4 +1,4 @@
-extends State
+extends EnemyState
 class_name Chase
 
 @export var attack_radius : float

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://l25dhnhg2gi4"]
+[gd_scene load_steps=9 format=3 uid="uid://b1lica4ixjh4v"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/RangedWeapon.gd" id="1_4u6cf"]
 [ext_resource type="Texture2D" uid="uid://ldgobxq07sks" path="res://assets/Weapons/bow.png" id="2_dxu0d"]
