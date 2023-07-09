@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8os1j4od05im"]
+[gd_scene load_steps=9 format=3 uid="uid://b8os1j4od05im"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/RangedWeapon.gd" id="1_4u6cf"]
 [ext_resource type="Texture2D" uid="uid://ldgobxq07sks" path="res://assets/Weapons/bow.png" id="2_dxu0d"]
@@ -71,6 +71,9 @@ _data = {
 "sword_swing": SubResource("Animation_34r76")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dbs3"]
+radius = 22.69
+
 [node name="ranged_weapon" type="Node2D"]
 script = ExtResource("1_4u6cf")
 
@@ -87,3 +90,7 @@ scale = Vector2(0.368758, 0.368758)
 texture = ExtResource("2_dxu0d")
 
 [node name="ProjectileSpawnPoint" type="Node2D" parent="Node2D"]
+position = Vector2(156, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/ProjectileSpawnPoint"]
+shape = SubResource("CircleShape2D_4dbs3")
