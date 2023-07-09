@@ -22,6 +22,7 @@ func spawn_projectile():
 	var node_2d = weapon.get_parent().get_parent()
 	var proj_spawn = weapon.get_child(1).get_child(1)
 	print("loc:",proj_spawn.position)
+	print()
 	projectile.update_rotation(node_2d.rotation, proj_spawn.position)
 	projectile.position =  proj_spawn.position
 
