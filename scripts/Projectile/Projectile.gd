@@ -21,7 +21,6 @@ func update_rotation(rotation, _position):
 	self.start_pos = _position
 
 func _physics_process(delta):
-	print("gaming")
 	position -= transform.y * missile_speed * delta
 	check_range(position)
 
