@@ -1,6 +1,9 @@
 extends State
 class_name EnemyState
 
+@export var enemy_controller : CharacterBody2D
+@export var enemy : Node2D
+
 var wr_enemy
 
 func _ready():
