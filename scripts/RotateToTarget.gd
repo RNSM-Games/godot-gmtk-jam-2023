@@ -24,7 +24,7 @@ func _physics_process(delta):
 	temp_position.y -= 200
 	position = lerp(position,temp_position,.5)
 	rotation = lerp_angle(rotation,temp_rotation,.5)
-	weapon.get_node("Node2D/Sprite2D/Area2D/CollisionShape2D").disabled = true
+	print("JOEDAD",weapon.item_type)
 
 	
 
@@ -40,9 +40,9 @@ func get_angle():
 
 func _input(event):
 	if event.is_action_pressed("Attack"):
-		print("hi")
-		orientation *= -1
-		weapon.get_node("Node2D/Sprite2D/Area2D/CollisionShape2D").disabled = false
+		if(weapon.item_type == "Melee"):
+			orientation *= -1
+		# weapon.get_node("Node2D/Sprite2D/Area2D/CollisionShape2D").disabled = false
 
 
 		

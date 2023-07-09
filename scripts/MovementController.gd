@@ -22,5 +22,5 @@ func get_target() -> Vector2:
 
 func _physics_process(delta):
 	if velocity.x != 0:
-		get_child(0).get_node("Sprite2D").flip_h = velocity.x < 0
+		get_child(0).get_node("AnimatedSprite2D").flip_h = velocity.x < 0
 

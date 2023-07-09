@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtb2rj7q1o712"]
+[gd_scene load_steps=2 format=3 uid="uid://b43iqsr4qu53d"]
 
 [ext_resource type="Script" path="res://scripts/Equippable/Buff.gd" id="1_f6h27"]
 

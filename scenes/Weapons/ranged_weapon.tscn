@@ -87,4 +87,3 @@ scale = Vector2(0.368758, 0.368758)
 texture = ExtResource("2_dxu0d")
 
 [node name="ProjectileSpawnPoint" type="Node2D" parent="Node2D"]
-position = Vector2(94, 0)

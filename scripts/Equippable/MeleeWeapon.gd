@@ -1,8 +1,10 @@
 extends Weapon
 class_name MeleeWeapon
 
+
 func _init():
-	self.damage_modifier = 25.0
+	damage_modifier = 25.0
+	item_type = "Melee"
 
 func action(damage:float):
 	self.attack_damage = damage * damage_modifier
