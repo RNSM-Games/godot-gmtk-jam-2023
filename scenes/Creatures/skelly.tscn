@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7akb8ba62jlv"]
+[gd_scene load_steps=13 format=3 uid="uid://7akb8ba62jlv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_ef1h7"]
 [ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_55v0m"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cu81dail48j6j" path="res://scenes/Abilities/DropBomb.tscn" id="4_isn7h"]
 [ext_resource type="PackedScene" uid="uid://b4dhw7r8l21ep" path="res://scenes/bomb.tscn" id="5_pirqx"]
 [ext_resource type="Texture2D" uid="uid://b5pioy0ce8k64" path="res://assets/Creatures/skelly_3.png" id="5_wjrer"]
-[ext_resource type="Script" path="res://scenes/Creatures/RotateToTarget.gd" id="6_g2yio"]
-[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="7_0tjrb"]
+[ext_resource type="Script" path="res://scripts/RotateToTarget.gd" id="8_g7cp8"]
+[ext_resource type="Texture2D" uid="uid://ceawfgqg0kw04" path="res://assets/Creatures/Skelly-arm.png" id="8_nm7jy"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="10_4s5nq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5vuy"]
 animations = [{
@@ -31,14 +32,15 @@ animations = [{
 radius = 164.59
 
 [node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
-position = Vector2(0, 2)
+position = Vector2(0, 3)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ef1h7")
 body = NodePath("Skeleton")
 
 [node name="Skeleton" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+position = Vector2(2.5, 4.76837e-07)
 script = ExtResource("2_55v0m")
-weapon = NodePath("../Weapon/ranged_weapon")
+weapon = NodePath("../Weapon/Sprite2D/ranged_weapon")
 ability = NodePath("../Ability/DropBomb")
 health = 10
 damage = 10.0
@@ -56,12 +58,17 @@ bomb = ExtResource("5_pirqx")
 character = NodePath("../../Skeleton")
 
 [node name="Weapon" type="Node2D" parent="." node_paths=PackedStringArray("controller")]
-script = ExtResource("6_g2yio")
+position = Vector2(462.5, -122.5)
+script = ExtResource("8_g7cp8")
 controller = NodePath("..")
 
-[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("7_0tjrb")]
-position = Vector2(3.05176e-05, 0)
-character = NodePath("../../Skeleton")
+[node name="Sprite2D" type="Sprite2D" parent="Weapon"]
+position = Vector2(175, 182.5)
+texture = ExtResource("8_nm7jy")
+
+[node name="ranged_weapon" parent="Weapon/Sprite2D" node_paths=PackedStringArray("character") instance=ExtResource("10_4s5nq")]
+position = Vector2(2.5, 5)
+character = NodePath("../../../Skeleton")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3x2rt")

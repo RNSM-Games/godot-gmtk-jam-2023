@@ -1,16 +1,13 @@
 extends MovementController
 
 
-
 func get_input():
 	var direction : Vector2 = Vector2.ZERO
 	direction = Input.get_vector("left", "right", "up", "down")
 	move_direction = direction
-	if velocity.x != 0:
-		get_child(0).get_node("AnimatedSprite2D").animation = "walk"
-		get_child(0).get_node("AnimatedSprite2D").flip_h = velocity.x < 0
 
 func _physics_process(_delta):
+	super(_delta)
 	get_input()
 	if(can_move):
 		move(get_child(0).speed,move_direction)

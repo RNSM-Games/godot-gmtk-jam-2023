@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://csf0y5ldwfxya"]
+
+[ext_resource type="Script" path="res://scripts/Enemy/EnemyController.gd" id="1_wsugc"]
+[ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_p44yy"]
+[ext_resource type="Texture2D" uid="uid://cug66enowkl4g" path="res://assets/Creatures/skelly-no-arms.png" id="3_wh4s1"]
+[ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="4_03xcb"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="5_gvyd8"]
+[ext_resource type="PackedScene" uid="uid://c1l6mfi481ulf" path="res://scenes/enemystatemachine.tscn" id="7_jkoje"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
+radius = 164.59
+
+[node name="Orc" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["creature", "player"]]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_wsugc")
+body = NodePath("Body")
+
+[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability", "sprite")]
+script = ExtResource("2_p44yy")
+weapon = NodePath("../Weapon/ranged_weapon")
+ability = NodePath("../Ability/Dodge")
+health = 10
+damage = 10.0
+speed = 600.0
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+texture = ExtResource("3_wh4s1")
+
+[node name="Ability" type="Node2D" parent="."]
+
+[node name="Dodge" parent="Ability" node_paths=PackedStringArray("character") instance=ExtResource("4_03xcb")]
+character = NodePath("../..")
+
+[node name="Weapon" type="Node2D" parent="."]
+
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("5_gvyd8")]
+character = NodePath("../..")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3x2rt")
+
+[node name="enemystatemachine" parent="." instance=ExtResource("7_jkoje")]

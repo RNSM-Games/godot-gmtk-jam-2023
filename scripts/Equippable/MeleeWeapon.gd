@@ -1,14 +1,15 @@
 extends Weapon
 class_name MeleeWeapon
 
+
 func _init():
-	self.damage_modifier = 25.0
+	damage_modifier = 25.0
+	item_type = "Melee"
 
 func action(damage:float):
 	self.attack_damage = damage * damage_modifier
-	
-	$AnimationPlayer.play("sword_swing")
+	# get_parent().get_node("AnimationPlayer").play("Swing")
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("entity"):
-		body.get_node("Body").get_hit(self.attack_damage)
+	if body.get_parent().is_in_group("entity"):
+		body.get_parent().get_node("Body").get_hit(self.attack_damage)
