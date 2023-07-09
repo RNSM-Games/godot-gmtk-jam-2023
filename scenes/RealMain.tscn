@@ -18,9 +18,9 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="Quetz" parent="." instance=ExtResource("4_avqss")]
-
 [node name="Card" parent="." instance=ExtResource("4_8knci")]
+
+[node name="Quetz" parent="." instance=ExtResource("4_avqss")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="cardExploded" from="Card" to="." method="_on_card_card_exploded"]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://bil53nsj2sqr6"]
+
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_s4wpd"]
+[ext_resource type="Script" path="res://scripts/Creature/Creature.gd" id="2_surq6"]
+[ext_resource type="Texture2D" uid="uid://e8v6mixhjnoy" path="res://assets/Creatures/windy_1.png" id="3_bdcwy"]
+[ext_resource type="Texture2D" uid="uid://t2g4fo08bsk1" path="res://assets/Creatures/windy_2.png" id="4_t4jo5"]
+[ext_resource type="Texture2D" uid="uid://df1ghfstx75ec" path="res://assets/Creatures/windy_3.png" id="5_gfcfp"]
+[ext_resource type="Texture2D" uid="uid://dwj7am4e4xqge" path="res://assets/Creatures/windy_4.png" id="6_vqatp"]
+[ext_resource type="PackedScene" uid="uid://bqfwsrqxa22ff" path="res://scenes/Abilities/Dodge.tscn" id="10_7w8l5"]
+[ext_resource type="PackedScene" uid="uid://b8os1j4od05im" path="res://scenes/Weapons/ranged_weapon.tscn" id="11_nklw1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xacgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bdcwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t4jo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gfcfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vqatp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3x2rt"]
+radius = 164.59
+
+[node name="Wendy" type="CharacterBody2D" node_paths=PackedStringArray("body") groups=["entity", "player"]]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_s4wpd")
+body = NodePath("Body")
+
+[node name="Body" type="Node2D" parent="." node_paths=PackedStringArray("weapon", "ability")]
+script = ExtResource("2_surq6")
+weapon = NodePath("../Weapon/ranged_weapon")
+ability = NodePath("../Ability/Dodge")
+health = 10
+damage = 1.0
+speed = 600.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_xacgo")
+animation = &"walk"
+frame_progress = 0.782817
+
+[node name="Ability" type="Node2D" parent="."]
+
+[node name="Dodge" parent="Ability" node_paths=PackedStringArray("character") instance=ExtResource("10_7w8l5")]
+character = NodePath("../..")
+
+[node name="Weapon" type="Node2D" parent="."]
+
+[node name="ranged_weapon" parent="Weapon" node_paths=PackedStringArray("character") instance=ExtResource("11_nklw1")]
+character = NodePath("../..")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3x2rt")

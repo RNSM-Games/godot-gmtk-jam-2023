@@ -40,7 +40,6 @@ body = NodePath("Body")
 script = ExtResource("2_7ijrq")
 weapon = NodePath("../Weapon/ranged_weapon")
 ability = NodePath("../Ability/Dodge")
-max_health = 10000
 health = 10
 damage = 1.0
 speed = 600.0
