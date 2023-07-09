@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b5pioy0ce8k64" path="res://assets/Creatures/skelly_3.png" id="5_wjrer"]
 [ext_resource type="Script" path="res://scripts/RotateToTarget.gd" id="8_g7cp8"]
 [ext_resource type="Texture2D" uid="uid://ceawfgqg0kw04" path="res://assets/Creatures/Skelly-arm.png" id="8_nm7jy"]
-[ext_resource type="PackedScene" uid="uid://8t67gxnsuimx" path="res://scenes/Weapons/melee_weapon.tscn" id="10_335j5"]
+[ext_resource type="PackedScene" uid="uid://8t67gxnsuimx" path="res://scenes/Weapons/sword.tscn" id="10_335j5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5vuy"]
 animations = [{
