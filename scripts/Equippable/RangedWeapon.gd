@@ -3,7 +3,6 @@ class_name RangedWeapon
 
 @onready var projectile_scene = load("res://scenes/Projectiles/projectile.tscn")
 
-k
 var animation = "bow_shoot"
 
 func _init():
